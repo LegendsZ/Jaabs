@@ -45,6 +45,12 @@
   <ItemGroup>
     <Compile Include="JAABS\ATMMachine\ATMMachine.cs" />
     <Compile Include="JAABS\ATMMachine\Bank.cs" />
+    <Compile Include="JAABS\ATMMachine\CardReader.cs" />
+    <Compile Include="JAABS\ATMMachine\CCReceiver.cs" />
+    <Compile Include="JAABS\ATMMachine\Monitor.cs" />
+    <Compile Include="JAABS\ATMMachine\PinPad.cs" />
+    <Compile Include="JAABS\ATMMachine\Printer.cs" />
+    <Compile Include="JAABS\ATMMachine\Vault.cs" />
     <Compile Include="JAABS\Customer\AccountDetails.cs" />
     <Compile Include="JAABS\Customer\Card.cs" />
     <Compile Include="JAABS\Customer\Customer.cs" />
