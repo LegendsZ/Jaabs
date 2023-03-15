@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Backend
+namespace Backend.Customer
 {
     internal class AccountDetails
     {

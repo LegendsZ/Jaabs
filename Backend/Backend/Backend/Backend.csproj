@@ -43,14 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backend\AccountDetails.cs" />
-    <Compile Include="Backend\Card.cs" />
-    <Compile Include="Backend\Customer.cs" />
+    <Compile Include="Backend\Customer\AccountDetails.cs" />
+    <Compile Include="Backend\Customer\Card.cs" />
+    <Compile Include="Backend\Customer\Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Backend\ATMMachine\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

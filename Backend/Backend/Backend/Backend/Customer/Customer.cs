@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Backend
+namespace Backend.Customer
 {
     internal class Customer
     {
         public string Name { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
-        public Accountdetails Account { get; set; }
+        public AccountDetails Account { get; set; }
 
         public Customer(string name, int age, string address, AccountDetails account)
         {
