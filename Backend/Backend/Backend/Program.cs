@@ -4,24 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.Title = "Jaabs Backend";
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Hello World!\n");
+        Console.Title = "Jaabs Backend";
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Hello World!\n");
 
-            JAABS.Customer.Customer roland = new JAABS.Customer.Customer("Roland", 69, "Somewhere in Toronto", new JAABS.Customer.AccountDetails("3232", new JAABS.Customer.Card("Chequing", 123, 123, 123, 10), null));
-            Console.WriteLine("Customer: {0}\nAddress: {1}\nAge: {2}\nCustomer Number: {3}\nTotal Cash: {4}", roland.Name, roland.Address, roland.Age, roland.Account.CustomerNumber, roland.Account.TotalCash());
+        JAABS.Customer.Customer roland = new JAABS.Customer.Customer("Roland", 69, "Somewhere in Toronto", new JAABS.Customer.Account("Chequing", 123, 123, 123, 10), null);
+        Console.WriteLine("Customer: {0}\nAddress: {1}\nAge: {2}\nTotal Cash: {3}", roland.m_name, roland.m_address, roland.m_age, roland.TotalCash());
 
-            Console.ReadKey(); //waits for keyinput
-        }
+        Console.ReadKey(); //waits for keyinput
     }
-
-
-
-
 }
