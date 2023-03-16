@@ -51,6 +51,8 @@
     <Compile Include="JAABS\ATMMachine\PinPad.cs" />
     <Compile Include="JAABS\ATMMachine\Printer.cs" />
     <Compile Include="JAABS\ATMMachine\Vault.cs" />
+    <Compile Include="JAABS\Bank\Bank.cs" />
+    <Compile Include="JAABS\Bank\Hash.cs" />
     <Compile Include="JAABS\Customer\Account.cs" />
     <Compile Include="JAABS\Customer\Customer.cs" />
     <Compile Include="JAABS\Encryptioner.cs" />

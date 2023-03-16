@@ -8,5 +8,15 @@ namespace Backend.JAABS
 {
     internal class Encryptioner
     {
+        //Standard Caesar Encryption
+
+        public string EncryptKey(string key)
+        {
+            for (int i = 0; i < key.Length; i++)
+            {
+                key = key.Remove(i, 1).Insert(i, Convert.ToString(Convert.ToChar((key[i] + 25) % 255)));
+            }
+            return key;
+        }
     }
 }

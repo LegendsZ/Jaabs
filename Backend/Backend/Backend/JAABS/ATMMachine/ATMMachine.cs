@@ -8,13 +8,47 @@ namespace JAABS.ATMMachine
 {
     internal class ATMMachine
     {
-        public int m_MachineNumber;
-        public int m_TotalCash;
-
-        public ATMMachine(int machineNumber, int totalCash)
+        public bool CardIn;
+        public bool LoggedIn;
+        public string BankOwner;
+        public string MachineNumber;
+        public int FiveDollars;
+        public int TenDollars;
+        public int TwentyDollars;
+        public int FiftyDollars;
+        public int HundredDollars;
+        public JAABS.Bank.Bank[] Banks;
+        public JAABS.Bank.Bank MainBank;
+        public ATMMachine(string bankOwner, string machineNumber, int fiveDollars, int tenDollars, int twentyDollars, int fiftyDollars, int hundredDollars, JAABS.Bank.Bank mainbank)
         {
-            m_MachineNumber= machineNumber;
-            m_TotalCash = totalCash;
+            CardIn = false;
+            LoggedIn = false;
+            BankOwner = bankOwner;
+            MachineNumber= machineNumber;
+            FiveDollars= fiveDollars;
+            TenDollars= tenDollars;
+            TwentyDollars= twentyDollars;
+            FiftyDollars = fiftyDollars;
+            HundredDollars = hundredDollars;
+            MainBank = mainbank;
+            
+        }
+
+        public void LogIn(string pin)
+        {
+            string cardNumber = JAABS.ATMMachine.CardReader.Read();
+            LoggedIn = MainBank.VerifyLogin(cardNumber, pin);
+            Console.WriteLine("Logged In!\n");
+            Console.WriteLine("Card Number: {0}\n", cardNumber);
+        }
+
+        public void CheckCard()
+        {
+            CardIn = true;
+        }
+        public void EjectCard()
+        {
+            JAABS.ATMMachine.CardReader.Eject();
         }
 
         public bool DepositCash(int toDeposit)
@@ -58,7 +92,7 @@ namespace JAABS.ATMMachine
         {
             return -1;
         }
-
+        //Total cash inside the machine
         public bool addCash()
         {
             return false;
