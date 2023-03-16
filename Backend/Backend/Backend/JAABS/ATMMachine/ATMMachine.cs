@@ -8,6 +8,7 @@ namespace JAABS.ATMMachine
 {
     internal class ATMMachine
     {
+        public string CardNumber;
         public bool CardIn;
         public bool LoggedIn;
         public string BankOwner;
@@ -40,15 +41,22 @@ namespace JAABS.ATMMachine
             LoggedIn = MainBank.VerifyLogin(cardNumber, pin);
             Console.WriteLine("Logged In!\n");
             Console.WriteLine("Card Number: {0}\n", cardNumber);
+            CardNumber = cardNumber;
         }
 
         public void CheckCard()
         {
-            CardIn = true;
+            if (JAABS.ATMMachine.CardReader.Read() == "") CardIn = false;
+            else CardIn = true;
         }
         public void EjectCard()
         {
             JAABS.ATMMachine.CardReader.Eject();
+        }
+
+        public void LogOut()
+        {
+            LoggedIn = false;
         }
 
         public bool DepositCash(int toDeposit)

@@ -28,6 +28,23 @@ internal class Program
                     string pin = Console.ReadLine();
                     ATM.LogIn(pin);
                 }
+                if (!ATM.CardIn)
+                {
+                    System.Threading.Thread.Sleep(50);
+                    Console.WriteLine("Waiting for card");
+                }
+            }
+            while (ATM.LoggedIn)
+            {
+                ATM.CheckCard();
+                if (!ATM.CardIn)
+                {
+                    ATM.LogOut();
+                    break;
+                }
+                System.Threading.Thread.Sleep(50);
+                Console.Write("{0}", ATM.CardNumber);
+
             }
         }
 
