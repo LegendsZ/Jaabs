@@ -25,5 +25,34 @@ namespace JAABS.Bank
 
             return true;
         }
+
+        public JAABS.Customer.Customer[] CustomerReader(string customerFile)
+        {
+            //stores the lines of data in the file into elements of an array
+            string[] lines = File.ReadAllLines(customerFile);
+            //customer array with the size of the number of customers in the file
+            JAABS.Customer.Customer[] customers = new JAABS.Customer.Customer[lines.Length];
+            int count = 0;
+
+            //iterates through each customer's data
+            foreach (string line in lines)
+            {
+                //seperate the data into an array
+                string[] token = line.Split(',');
+
+                //creates the customer's chequing account
+                Account chequing = new Account(token[3], Int32.Parse(token[4]), Int32.Parse(token[5]), Int32.Parse(token[6]), Convert.ToDouble(token[7]));
+
+                //creates the customer's saving account
+                Account saving = new Account(token[8], Int32.Parse(token[9]), Int32.Parse(token[10]), Int32.Parse(token[11]), Convert.ToDouble(token[12]));
+
+                //adds the customer to the array
+                customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving);
+
+                count++;
+            }
+
+            return customers;
+        }
     }
 }
