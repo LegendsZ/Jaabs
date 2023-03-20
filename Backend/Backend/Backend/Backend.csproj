@@ -47,6 +47,7 @@
     <Compile Include="JAABS\ATMMachine\Bank.cs" />
     <Compile Include="JAABS\ATMMachine\CardReader.cs" />
     <Compile Include="JAABS\ATMMachine\CCReceiver.cs" />
+    <Compile Include="JAABS\ATMMachine\MoneyReader.cs" />
     <Compile Include="JAABS\ATMMachine\Monitor.cs" />
     <Compile Include="JAABS\ATMMachine\PinPad.cs" />
     <Compile Include="JAABS\ATMMachine\Printer.cs" />

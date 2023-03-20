@@ -12,10 +12,8 @@ internal class Program
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Hello World!\n");
 
-        JAABS.Customer.Customer roland = new JAABS.Customer.Customer("Roland", 69, "Somewhere in Toronto", new JAABS.Customer.Account("Chequing", 123, 123, 123, 10), null);
-        Console.WriteLine("Customer: {0}\nAddress: {1}\nAge: {2}\nTotal Cash: {3}", roland.Name, roland.Address, roland.Age, roland.TotalCash());
 
-        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753", 1000, 1000, 1000, 1000, 1000, new JAABS.Bank.Bank("CIBC", "HI", "HELLO"));
+        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753", 1000, 1000, 1000, 1000, 1000, new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "custHashes"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
         while(true)
         {
@@ -24,7 +22,7 @@ internal class Program
                 ATM.CheckCard();
                 if (ATM.CardIn)
                 {
-                    Console.Write("Enter Pin: ");
+                    Console.Write("Enter Pin (no verification yet so put in 1234 for valid login, anything else for invalid): ");
                     string pin = Console.ReadLine();
                     ATM.LogIn(pin);
                 }
@@ -43,7 +41,48 @@ internal class Program
                     break;
                 }
                 System.Threading.Thread.Sleep(50);
-                Console.Write("{0}", ATM.CardNumber);
+                if (ATM.CardType == "Debit")
+                { 
+                    Console.Write("Enter 1 to deposit, 2 to withdraw, 3 transfer: ", ATM.CardNumber);
+                    string choice = Console.ReadLine();
+                    if (choice == "1")
+                    {
+                        Console.Write("Enter 1 to deposit cash, enter 2 to deposit cheque: ");
+                        string withdrawChoice = Console.ReadLine();
+                        if (withdrawChoice == "1")
+                        {
+
+                        }
+                        else if (withdrawChoice == "2")
+                        {
+
+                        }
+                    }
+                    if (choice == "2")
+                    {
+                        Console.Write("Enter 1 for chequing, 2 for savings: ");
+                        string accountChoice = Console.ReadLine();
+                        Console.Write("Enter how much: ");
+                        string amount = Console.ReadLine();
+
+                        ATM.Withdraw(Convert.ToInt32(amount), accountChoice);
+                    }
+                }
+                if (ATM.CardType == "Credit")
+                {
+                    Console.Write("Enter 1 to pay, 2 to withdraw money");
+                    string choice = Console.ReadLine();
+                    if (choice == "1")
+                    {
+                        Console.WriteLine("Meow");
+                    }
+                    if (choice == "2")
+                    {
+                        Console.Write("Enter how much: ");
+                        string amount = Console.ReadLine();
+                        ATM.Withdraw(Convert.ToInt32(amount), null);
+                    }
+                }
 
             }
         }

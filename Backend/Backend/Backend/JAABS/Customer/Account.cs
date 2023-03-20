@@ -8,18 +8,18 @@ namespace JAABS.Customer
 {
     internal class Account
     { 
-        public string m_type { get; set; }
-        public int m_transitNumber { get; set; }
-        public int m_institutionNumber { get; set; }
-        public int m_accountNumber { get; set; }
-        public double m_cash { get; set; }
+        public string Type { get; set; }
+        public int TransitNumber { get; set; }
+        public int InsitutionNumber { get; set; }
+        public int AccountNumber { get; set; }
+        public double Cash { get; set; }
         public Account(string type, int transitnumber, int institutionnumber, int accountnumber, double cash)
         {
-            m_type = type;
-            m_transitNumber = transitnumber;
-            m_institutionNumber = institutionnumber;
-            m_accountNumber = accountnumber;
-            m_cash = cash;
+            Type = type;
+            TransitNumber = transitnumber;
+            InsitutionNumber = institutionnumber;
+            AccountNumber = accountnumber;
+            Cash = cash;
         }
     }
 }
