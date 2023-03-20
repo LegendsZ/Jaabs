@@ -58,6 +58,22 @@ namespace JAABS.Bank
             return customers;
         }
 
+        public JAABS.Bank.Hash[] HashReader(string hashFile)
+        {
+            string[] lines = File.ReadAllLines(hashFile);
+            JAABS.Bank.Hash[] hashes = new JAABS.Bank.Hash[lines.Length];
+            int count = 0;
+
+            foreach (string line in lines)
+            {
+                string[] token = line.Split(',');
+                hashes[count] = new Hash(token[0], token[1]);
+                count++;
+            }
+
+            return hashes;
+        }
+
         public JAABS.Customer.Customer customerFinder(string cardNumber)
         {
             for (int i = 0; i < Customers.Length; i++)

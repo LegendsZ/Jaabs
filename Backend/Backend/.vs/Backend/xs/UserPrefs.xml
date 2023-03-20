@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{BE090A5D-2689-4269-94C0-94C56E881682}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Backend/JAABS/Bank/Bank.cs">
+    <Files>
+      <File FileName="Backend/JAABS/Bank/Bank.cs" Line="71" Column="25" />
+      <File FileName="Backend/JAABS/Bank/Hash.cs" Line="1" Column="1" />
+      <File FileName="Backend/JAABS/Customer/Customer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Backend" expanded="True">
+            <Node name="Backend" expanded="True">
+              <Node name="JAABS" expanded="True">
+                <Node name="Bank" expanded="True">
+                  <Node name="Bank.cs" selected="True" />
+                </Node>
+                <Node name="Customer" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Backend PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
