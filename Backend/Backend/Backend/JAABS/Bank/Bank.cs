@@ -111,5 +111,22 @@ namespace JAABS.Bank
             }
             return false;
         }
+        public void depositCheque(JAABS.Bank.Cheque toDeposit, string cardNumber,string choice)
+        {
+            foreach (JAABS.Customer.Customer cust in Customers)
+            {
+                if (cust.CardNumber.Equals(cardNumber))
+                {
+                    if (choice.Equals("savings"))
+                    {
+                        cust.Savings.Cash += toDeposit.amount;
+                    }
+                    else //we know it'll be one of the two
+                    {
+                        cust.Chequing.Cash += toDeposit.amount;
+                    }
+                }
+            }
+        }
     }
 }

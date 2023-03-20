@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,9 +146,13 @@ namespace JAABS.ATMMachine
         }
 
         //make a cheque class?
-        public bool DepositCheques(int toDeposit)
+        public bool DepositCheques(JAABS.Bank.Cheque toDeposit, string choice)
         {
-
+            if (CardType.Equals("Debit"))
+            {
+                MainBank.depositCheque(toDeposit, CardNumber, choice);
+                return true;
+            }
             return false;
         }
 
@@ -169,16 +174,12 @@ namespace JAABS.ATMMachine
             return false;
         }
 
-        public int checkBalance()
+        public JAABS.Bank.Cheque readCheque(string filename)
         {
-            return 0;
+            string[] lines = File.ReadAllLines(filename);
+            return new JAABS.Bank.Cheque(lines[0], lines[1], lines[2], lines[3], lines[4],lines[5], int.Parse(lines[6]));
         }
 
-        //make transaction class plz, change ret type of the func to Transaction list
-        public int checkTransactions()
-        {
-            return -1;
-        }
         //Total cash inside the machine
         public bool addCash()
         {
