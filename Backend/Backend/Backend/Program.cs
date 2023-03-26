@@ -13,7 +13,7 @@ internal class Program
         Console.WriteLine("Hello World!\n");
 
 
-        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753", 1000, 1000, 1000, 1000, 1000, new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "custHashes"));
+        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "custHashes"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
         while(true)
         {

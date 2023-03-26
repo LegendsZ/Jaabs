@@ -22,21 +22,75 @@ namespace JAABS.ATMMachine
         public JAABS.Bank.Bank[] Banks;
         public JAABS.Bank.Bank MainBank;
         public string CardType;
-        public ATMMachine(string bankOwner, string machineNumber, int fiveDollars, int tenDollars, int twentyDollars, int fiftyDollars, int hundredDollars, JAABS.Bank.Bank mainbank)
+        public ATMMachine(string bankOwner, string machineNumber, JAABS.Bank.Bank mainbank)
         {
             CardIn = false;
             LoggedIn = false;
             BankOwner = bankOwner;
             MachineNumber= machineNumber;
-            FiveDollars= fiveDollars;
-            TenDollars= tenDollars;
-            TwentyDollars= twentyDollars;
-            FiftyDollars = fiftyDollars;
-            HundredDollars = hundredDollars;
             MainBank = mainbank;
+            ReadMoney("Vault.txt");
             
         }
+        public void ReadMoney(string filename)
+        {
+            string[] values = File.ReadAllLines(filename);
+            FiveDollars = Convert.ToInt32(values[0]);
+            TenDollars = Convert.ToInt32(values[1]);
+            TwentyDollars = Convert.ToInt32(values[2]);
+            FiftyDollars = Convert.ToInt32(values[3]);
+            HundredDollars = Convert.ToInt32(values[4]);
+        }
+        public void GetOtherBanks(string filename)
+        {
+            Console.WriteLine("hi");
+        }
 
+        public void DepositCash(string where)
+        {
+            string key = "1";
+            int money;
+            int total = 0;
+            while (key == "1")
+            {
+                money = JAABS.ATMMachine.MoneyReader.Read();
+                switch(money)
+                {
+                    case 5:
+                        FiveDollars++;
+                        break;
+                    case 10:
+                        TenDollars++;
+                        break;
+                    case 20:
+                        TwentyDollars++;
+                        break;
+                    case 50:
+                        FiftyDollars++;
+                        break;
+                    case 100:
+                        HundredDollars++;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid amount of money");
+                        break;
+
+                }
+                total += money;
+                Console.WriteLine("Enter 1 to deposit more, 2 if done depositing");
+                key = Console.ReadLine();
+        
+            }
+            if (MainBank.requestDeposit(CardNumber, total, where) == false)
+            {
+                Console.WriteLine("Suspicious amount deposited");
+            }
+            else
+            {
+                Console.WriteLine("Deposit successful");
+            }
+
+        }
         public void LogIn(string pin)
         {
             string cardNumber = JAABS.ATMMachine.CardReader.Read();

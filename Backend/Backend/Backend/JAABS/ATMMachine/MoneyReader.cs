@@ -4,9 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.JAABS.ATMMachine
+namespace JAABS.ATMMachine
 {
     internal class MoneyReader
     {
+        public static int Read()
+        {
+            string money = System.IO.File.ReadAllText("MoneyReader.txt");
+            return Convert.ToInt32(money);
+        }
+
+        public static void Eject()
+        {
+            System.IO.File.WriteAllText("MoneyReader.txt", "");
+        }
     }
 }

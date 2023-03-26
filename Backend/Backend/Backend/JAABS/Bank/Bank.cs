@@ -27,7 +27,26 @@ namespace JAABS.Bank
             if (hash == "efgh") return true;
             return false;
         }
+        public bool requestDeposit(string cardNumber, int amount, string where)
+        {
+            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            if (where == "savings")
+            {
+                temp.Savings.Cash += amount;
+            }
+            else
+            {
+                temp.Chequing.Cash += amount;
+            }
+            if (amount >= 10000)
+            {
+                //add a block account function here
+                return false;
+            }
 
+
+            return true;
+        }
         public JAABS.Customer.Customer[] CustomerReader(string customerFile)
         {
             //stores the lines of data in the file into elements of an array
