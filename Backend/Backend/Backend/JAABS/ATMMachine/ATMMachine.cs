@@ -106,18 +106,29 @@ namespace JAABS.ATMMachine
                 CardType = "Debit";
                 Console.WriteLine("Card type: Debit");
             }
+ 
+            int status = MainBank.VerifyLogin(CardNumber, pin);
 
-            LoggedIn = MainBank.VerifyLogin(CardNumber, pin);
-            if (LoggedIn)
+            if (status == 0)
             {
+                LoggedIn = true;
                 Console.WriteLine("Logged In!\n");
+            }
+            else if (status == 2)
+            {
+                Console.WriteLine("Account is temporarily blocked. Call 1-777-4421 or go to the nearest bank to resolve the issue");
+                return;
             }
             else
             {
-                Console.WriteLine("Enter pin again.");
+                Console.WriteLine("Invalid pin. Try again");
             }
-        }
 
+        }
+        public void PrintReceipt()
+        {
+
+        }
         public void Withdraw(int amount, string type)
         {
             if (amount % 5 != 0)
@@ -234,10 +245,9 @@ namespace JAABS.ATMMachine
             return new JAABS.Bank.Cheque(lines[0], lines[1], lines[2], lines[3], lines[4],lines[5], int.Parse(lines[6]));
         }
 
-        //Total cash inside the machine
-        public bool addCash()
+        public void SaveTransactions()
         {
-            return false;
+
         }
 
         //add check functions for atm related methods.

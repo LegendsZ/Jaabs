@@ -12,24 +12,35 @@ namespace JAABS.Bank
         public string Name { get; set; }
         public JAABS.Customer.Customer[] Customers { get; set; }
         public JAABS.Bank.Hash[] Hashes { get; set; }
+        public string CustomerServer;
         public Bank(string name, string customersFile, string hashFile)
         {
             Name = name;
-            //Customers = customersFile.read();
+            CustomerServer = customersFile;
             Customers = CustomerReader(customersFile);
-            //Hashes = hashFile.read();
-            Hashes = new JAABS.Bank.Hash[] {};
+            Hashes = HashReader(hashFile);
         }
 
-        public bool VerifyLogin(string cardNumber, string pin)
+        public int VerifyLogin(string cardNumber, string pin)
         {
             string hash = JAABS.Encryptioner.EncryptPin(JAABS.Encryptioner.DecryptKey(pin));
-            if (hash == "efgh") return true;
-            return false;
+            cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
+            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            //"if (hash == "efgh") return true;"
+            if (HashFinder(cardNumber) != hash)
+            {
+                temp.Attempts += 1;
+                if (temp.Attempts >= 3) temp.Blocked = true;
+                UpdateServer();
+                return 1;
+            }
+            if (temp.Blocked == true) return 2;
+            return 0;
         }
+        //Blocks account if deposit is more than 10k (Not legal)
         public bool requestDeposit(string cardNumber, int amount, string where)
         {
-            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
             if (where == "savings")
             {
                 temp.Savings.Cash += amount;
@@ -40,7 +51,7 @@ namespace JAABS.Bank
             }
             if (amount >= 10000)
             {
-                //add a block account function here
+                temp.Blocked = true;
                 return false;
             }
 
@@ -70,7 +81,7 @@ namespace JAABS.Bank
                 //creates the customer's credit card account
                 JAABS.Customer.Account atm = new JAABS.Customer.Account(token[13], Int32.Parse(token[14]), Int32.Parse(token[15]), Int32.Parse(token[16]), Convert.ToDouble(token[17]));
                 //adds the customer to the array
-                customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving, atm, token[18]);
+                customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving, atm, token[18], Int32.Parse(token[19]), Int32.Parse(token[20]));
                 count++;
             }
 
@@ -91,6 +102,18 @@ namespace JAABS.Bank
             }
 
             return hashes;
+        }
+
+        public string HashFinder(string cardNumber)
+        {
+            for (int i = 0; i < Hashes.Length; i++)
+            {
+                if (Hashes[i].CardNumber == cardNumber)
+                {
+                    return Hashes[i].HashString;
+                }
+            }
+            return null;
         }
 
         public JAABS.Customer.Customer customerFinder(string cardNumber)
@@ -129,9 +152,11 @@ namespace JAABS.Bank
                 if (temp.Savings.Cash > amount)
                 {
                     temp.Savings.Cash = temp.Savings.Cash - amount;
+                    UpdateServer();
                     return true;
                 }
             }
+            UpdateServer();
             return false;
         }
 
@@ -145,6 +170,7 @@ namespace JAABS.Bank
                 return true;
             }
             return false;
+            UpdateServer();
         }
         public void depositCheque(JAABS.Bank.Cheque toDeposit, string cardNumber,string choice)
         {
@@ -162,6 +188,19 @@ namespace JAABS.Bank
                     }
                 }
             }
+            UpdateServer();
+        }
+        public void UpdateServer()
+        {
+            string[] CustomersData = new string[Customers.Length];
+            JAABS.Customer.Customer temp;
+            for (int i = 0; i < Customers.Length; i++)
+            {
+                temp = Customers[i];
+                string customerData = $"{temp.Name},{temp.Age},{temp.Address},{temp.Chequing.Type},{temp.Chequing.TransitNumber},{temp.Chequing.InsitutionNumber},{temp.Chequing.AccountNumber},{temp.Chequing.Cash},{temp.Savings.Type},{temp.Savings.TransitNumber},{temp.Savings.InsitutionNumber},{temp.Savings.AccountNumber},{temp.Savings.Cash},{temp.Credit.Type},{temp.Credit.TransitNumber},{temp.Credit.InsitutionNumber},{temp.Credit.AccountNumber},{temp.Credit.Cash},{temp.CardNumber},{temp.Blocked},{temp.Attempts}";
+                CustomersData[i] = customerData;
+            }
+            File.WriteAllLines(CustomerServer, CustomersData);
         }
     }
 }

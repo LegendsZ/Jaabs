@@ -11,7 +11,9 @@ namespace JAABS.ATMMachine
         public static int Read()
         {
             string money = System.IO.File.ReadAllText("MoneyReader.txt");
+            Eject();
             return Convert.ToInt32(money);
+
         }
 
         public static void Eject()

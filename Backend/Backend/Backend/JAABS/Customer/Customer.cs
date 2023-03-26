@@ -15,6 +15,8 @@ namespace JAABS.Customer
         public Account Savings { get; set; }
         public Account Credit { get; set; }
         public string CardNumber { get; set; }
+        public bool Blocked { get; set; }
+        public int Attempts { get; set; }
         public double TotalCash()
         {
             double totalCash = 0;
@@ -24,7 +26,7 @@ namespace JAABS.Customer
         }
 
 
-        public Customer(string name, int age, string address, Account chequing, Account savings, Account credit, string cardNumber)
+        public Customer(string name, int age, string address, Account chequing, Account savings, Account credit, string cardNumber, int status, int attempts)
         {
             Name = name;
             CardNumber = cardNumber;
@@ -33,6 +35,8 @@ namespace JAABS.Customer
             Chequing = chequing;
             Savings = savings;
             Credit = credit;
+            if (status == 0) Blocked = false;
+            Attempts = attempts;
         }
     }
 }

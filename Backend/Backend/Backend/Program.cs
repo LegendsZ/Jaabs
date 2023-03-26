@@ -13,16 +13,17 @@ internal class Program
         Console.WriteLine("Hello World!\n");
 
 
-        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "custHashes"));
+        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
         while(true)
         {
+            Console.Clear();
             while(!ATM.LoggedIn)
             {
                 ATM.CheckCard();
                 if (ATM.CardIn)
                 {
-                    Console.Write("Enter Pin (no verification yet so put in 1234 for valid login, anything else for invalid): ");
+                    Console.Write("Enter Pin: ");
                     string pin = Console.ReadLine();
                     ATM.LogIn(pin);
                 }
@@ -51,7 +52,9 @@ internal class Program
                         string depositChoice = Console.ReadLine();
                         if (depositChoice == "1")
                         {
-
+                            Console.WriteLine("Enter 'savings' or 'chequing'");
+                            choice = Console.ReadLine();
+                            ATM.DepositCash(choice);
                         }
                         else if (depositChoice == "2")
                         {
