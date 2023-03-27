@@ -73,13 +73,13 @@ namespace JAABS.Bank
                 string[] token = line.Split(',');
 
                 //creates the customer's chequing account
-                JAABS.Customer.Account chequing = new JAABS.Customer.Account(token[3], Int32.Parse(token[4]), Int32.Parse(token[5]), Int32.Parse(token[6]), Convert.ToDouble(token[7]));
+                JAABS.Customer.Account chequing = new JAABS.Customer.Account(token[3], token[4], token[5], token[6], Convert.ToDouble(token[7]));
 
                 //creates the customer's saving account
-                JAABS.Customer.Account saving = new JAABS.Customer.Account(token[8], Int32.Parse(token[9]), Int32.Parse(token[10]), Int32.Parse(token[11]), Convert.ToDouble(token[12]));
+                JAABS.Customer.Account saving = new JAABS.Customer.Account(token[8], token[9], token[10], token[11], Convert.ToDouble(token[12]));
 
                 //creates the customer's credit card account
-                JAABS.Customer.Account atm = new JAABS.Customer.Account(token[13], Int32.Parse(token[14]), Int32.Parse(token[15]), Int32.Parse(token[16]), Convert.ToDouble(token[17]));
+                JAABS.Customer.Account atm = new JAABS.Customer.Account(token[13], token[14], token[15], token[16], Convert.ToDouble(token[17]));
                 //adds the customer to the array
                 customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving, atm, token[18], Int32.Parse(token[19]), Int32.Parse(token[20]));
                 count++;

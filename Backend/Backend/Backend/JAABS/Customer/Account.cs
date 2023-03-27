@@ -9,11 +9,11 @@ namespace JAABS.Customer
     internal class Account
     { 
         public string Type { get; set; }
-        public int TransitNumber { get; set; }
-        public int InsitutionNumber { get; set; }
-        public int AccountNumber { get; set; }
+        public string TransitNumber { get; set; }
+        public string InsitutionNumber { get; set; }
+        public string AccountNumber { get; set; }
         public double Cash { get; set; }
-        public Account(string type, int transitnumber, int institutionnumber, int accountnumber, double cash)
+        public Account(string type, string transitnumber, string institutionnumber, string accountnumber, double cash)
         {
             Type = type;
             TransitNumber = transitnumber;
