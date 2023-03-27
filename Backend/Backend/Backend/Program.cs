@@ -12,6 +12,9 @@ internal class Program
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Hello World!\n");
 
+        Tester.Test();
+        Console.ReadKey();
+        Console.Clear();
 
         JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);

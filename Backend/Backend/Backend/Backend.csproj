@@ -57,6 +57,7 @@
     <Compile Include="JAABS\Customer\Account.cs" />
     <Compile Include="JAABS\Customer\Customer.cs" />
     <Compile Include="JAABS\Encryptioner.cs" />
+    <Compile Include="JAABS\Tester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

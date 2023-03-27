@@ -144,6 +144,7 @@ namespace JAABS.Bank
                 if (temp.Chequing.Cash > amount)
                 {
                     temp.Chequing.Cash = temp.Chequing.Cash - amount;
+                    UpdateServer();
                     return true;
                 }
             }
