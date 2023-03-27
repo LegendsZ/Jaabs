@@ -30,11 +30,11 @@ namespace JAABS.Bank
             if (HashFinder(cardNumber) != hash)
             {
                 temp.Attempts += 1;
-                if (temp.Attempts >= 3) temp.Blocked = true;
+                if (temp.Attempts >= 3) temp.Blocked = 1;
                 UpdateServer();
                 return 1;
             }
-            if (temp.Blocked == true) return 2;
+            if (temp.Blocked == 1) return 2;
             return 0;
         }
         //Blocks account if deposit is more than 10k (Not legal)
@@ -51,7 +51,7 @@ namespace JAABS.Bank
             }
             if (amount >= 10000)
             {
-                temp.Blocked = true;
+                temp.Blocked = 1;
                 return false;
             }
 
