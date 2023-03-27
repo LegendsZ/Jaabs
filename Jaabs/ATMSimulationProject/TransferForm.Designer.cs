@@ -28,129 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxTransfer = new GroupBox();
-            lblRecipientAccount = new Label();
-            combobxRecipients = new ComboBox();
-            btnTransfer = new Button();
-            txtboxTransfer = new TextBox();
-            lblTransfer = new Label();
-            lblBalance = new Label();
-            lbltxtBalance = new Label();
-            btnLogout = new Button();
-            grpboxTransfer.SuspendLayout();
-            SuspendLayout();
-            // 
-            // grpboxTransfer
-            // 
-            grpboxTransfer.Controls.Add(lblRecipientAccount);
-            grpboxTransfer.Controls.Add(combobxRecipients);
-            grpboxTransfer.Controls.Add(btnTransfer);
-            grpboxTransfer.Controls.Add(txtboxTransfer);
-            grpboxTransfer.Controls.Add(lblTransfer);
-            grpboxTransfer.Location = new Point(12, 60);
-            grpboxTransfer.Name = "grpboxTransfer";
-            grpboxTransfer.Size = new Size(200, 234);
-            grpboxTransfer.TabIndex = 6;
-            grpboxTransfer.TabStop = false;
-            grpboxTransfer.Text = "Transfer";
+            this.lblRecipientAccount = new System.Windows.Forms.Label();
+            this.combobxRecipients = new System.Windows.Forms.ComboBox();
+            this.btnTransfer = new System.Windows.Forms.Button();
+            this.txtboxTransfer = new System.Windows.Forms.TextBox();
+            this.lblTransfer = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lbltxtBalance = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // lblRecipientAccount
             // 
-            lblRecipientAccount.AutoSize = true;
-            lblRecipientAccount.Location = new Point(6, 90);
-            lblRecipientAccount.Name = "lblRecipientAccount";
-            lblRecipientAccount.Size = new Size(104, 15);
-            lblRecipientAccount.TabIndex = 6;
-            lblRecipientAccount.Text = "Recipient Account";
+            this.lblRecipientAccount.AutoSize = true;
+            this.lblRecipientAccount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRecipientAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblRecipientAccount.Location = new System.Drawing.Point(144, 144);
+            this.lblRecipientAccount.Name = "lblRecipientAccount";
+            this.lblRecipientAccount.Size = new System.Drawing.Size(173, 25);
+            this.lblRecipientAccount.TabIndex = 6;
+            this.lblRecipientAccount.Text = "Recipient Account";
             // 
             // combobxRecipients
             // 
-            combobxRecipients.FormattingEnabled = true;
-            combobxRecipients.Items.AddRange(new object[] { "James Smith", "Jane Doe", "Peter Crow", "Sam Wise", "Dolly West" });
-            combobxRecipients.Location = new Point(6, 113);
-            combobxRecipients.Name = "combobxRecipients";
-            combobxRecipients.Size = new Size(169, 23);
-            combobxRecipients.TabIndex = 5;
+            this.combobxRecipients.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.combobxRecipients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.combobxRecipients.FormattingEnabled = true;
+            this.combobxRecipients.Items.AddRange(new object[] {
+            "James Smith",
+            "Jane Doe",
+            "Peter Crow",
+            "Sam Wise",
+            "Dolly West"});
+            this.combobxRecipients.Location = new System.Drawing.Point(144, 172);
+            this.combobxRecipients.Name = "combobxRecipients";
+            this.combobxRecipients.Size = new System.Drawing.Size(169, 33);
+            this.combobxRecipients.TabIndex = 5;
             // 
             // btnTransfer
             // 
-            btnTransfer.Location = new Point(6, 205);
-            btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(169, 23);
-            btnTransfer.TabIndex = 4;
-            btnTransfer.Text = "Transfer";
-            btnTransfer.UseVisualStyleBackColor = true;
-            btnTransfer.Click += btnTransfer_Click;
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnTransfer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransfer.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnTransfer.Location = new System.Drawing.Point(297, 223);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(125, 40);
+            this.btnTransfer.TabIndex = 4;
+            this.btnTransfer.Text = "Transfer";
+            this.btnTransfer.UseVisualStyleBackColor = false;
             // 
             // txtboxTransfer
             // 
-            txtboxTransfer.Location = new Point(6, 47);
-            txtboxTransfer.Name = "txtboxTransfer";
-            txtboxTransfer.Size = new Size(169, 23);
-            txtboxTransfer.TabIndex = 3;
+            this.txtboxTransfer.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtboxTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtboxTransfer.Location = new System.Drawing.Point(144, 95);
+            this.txtboxTransfer.Name = "txtboxTransfer";
+            this.txtboxTransfer.Size = new System.Drawing.Size(169, 33);
+            this.txtboxTransfer.TabIndex = 3;
             // 
             // lblTransfer
             // 
-            lblTransfer.AutoSize = true;
-            lblTransfer.Location = new Point(6, 23);
-            lblTransfer.Name = "lblTransfer";
-            lblTransfer.Size = new Size(139, 15);
-            lblTransfer.TabIndex = 2;
-            lblTransfer.Text = "Enter Amount to Transfer";
+            this.lblTransfer.AutoSize = true;
+            this.lblTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblTransfer.Location = new System.Drawing.Point(107, 67);
+            this.lblTransfer.Name = "lblTransfer";
+            this.lblTransfer.Size = new System.Drawing.Size(239, 25);
+            this.lblTransfer.TabIndex = 2;
+            this.lblTransfer.Text = "Enter Amount to Transfer";
             // 
             // lblBalance
             // 
-            lblBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBalance.Location = new Point(129, 9);
-            lblBalance.Name = "lblBalance";
-            lblBalance.RightToLeft = RightToLeft.Yes;
-            lblBalance.Size = new Size(92, 25);
-            lblBalance.TabIndex = 8;
-            lblBalance.Text = "0";
-            lblBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblBalance.Location = new System.Drawing.Point(12, 284);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblBalance.Size = new System.Drawing.Size(100, 25);
+            this.lblBalance.TabIndex = 8;
+            this.lblBalance.Text = "0";
+            this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbltxtBalance
             // 
-            lbltxtBalance.AutoSize = true;
-            lbltxtBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lbltxtBalance.Location = new Point(12, 9);
-            lbltxtBalance.Name = "lbltxtBalance";
-            lbltxtBalance.RightToLeft = RightToLeft.Yes;
-            lbltxtBalance.Size = new Size(80, 25);
-            lbltxtBalance.TabIndex = 7;
-            lbltxtBalance.Text = "Balance";
-            lbltxtBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lbltxtBalance.AutoSize = true;
+            this.lbltxtBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltxtBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lbltxtBalance.Location = new System.Drawing.Point(20, 259);
+            this.lbltxtBalance.Name = "lbltxtBalance";
+            this.lbltxtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbltxtBalance.Size = new System.Drawing.Size(80, 25);
+            this.lbltxtBalance.TabIndex = 7;
+            this.lbltxtBalance.Text = "Balance";
+            this.lbltxtBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(18, 330);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(194, 23);
-            btnLogout.TabIndex = 9;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.Location = new System.Drawing.Point(18, 330);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(194, 23);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Crimson;
+            this.button1.Location = new System.Drawing.Point(297, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 40);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.label1.Location = new System.Drawing.Point(164, 20);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(121, 37);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Transfer";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TransferForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(228, 365);
-            Controls.Add(btnLogout);
-            Controls.Add(lblBalance);
-            Controls.Add(lbltxtBalance);
-            Controls.Add(grpboxTransfer);
-            Name = "TransferForm";
-            Text = "Transfer";
-            grpboxTransfer.ResumeLayout(false);
-            grpboxTransfer.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.combobxRecipients);
+            this.Controls.Add(this.lblRecipientAccount);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtboxTransfer);
+            this.Controls.Add(this.btnTransfer);
+            this.Controls.Add(this.lblTransfer);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.lbltxtBalance);
+            this.Name = "TransferForm";
+            this.Text = "Transfer";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private GroupBox grpboxTransfer;
         private Label lblRecipientAccount;
         private ComboBox combobxRecipients;
         private Button btnTransfer;
@@ -159,5 +190,7 @@
         private Label lblBalance;
         private Label lbltxtBalance;
         private Button btnLogout;
+        private Button button1;
+        private Label label1;
     }
 }

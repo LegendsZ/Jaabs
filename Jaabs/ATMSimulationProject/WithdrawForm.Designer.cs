@@ -28,114 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxWithdraw = new GroupBox();
-            btnWithdraw = new Button();
-            txtBoxWithdraw = new TextBox();
-            lblWithdraw = new Label();
-            lbltxtBalance = new Label();
-            lblBalance = new Label();
-            btnLogout = new Button();
-            grpboxWithdraw.SuspendLayout();
-            SuspendLayout();
-            // 
-            // grpboxWithdraw
-            // 
-            grpboxWithdraw.Controls.Add(btnWithdraw);
-            grpboxWithdraw.Controls.Add(txtBoxWithdraw);
-            grpboxWithdraw.Controls.Add(lblWithdraw);
-            grpboxWithdraw.Location = new Point(12, 57);
-            grpboxWithdraw.Name = "grpboxWithdraw";
-            grpboxWithdraw.Size = new Size(200, 234);
-            grpboxWithdraw.TabIndex = 4;
-            grpboxWithdraw.TabStop = false;
-            grpboxWithdraw.Text = "Withdraw";
+            this.btnWithdraw = new System.Windows.Forms.Button();
+            this.txtBoxWithdraw = new System.Windows.Forms.TextBox();
+            this.lblWithdraw = new System.Windows.Forms.Label();
+            this.lbltxtBalance = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // btnWithdraw
             // 
-            btnWithdraw.Location = new Point(13, 205);
-            btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(169, 23);
-            btnWithdraw.TabIndex = 2;
-            btnWithdraw.Text = "Withdraw";
-            btnWithdraw.UseVisualStyleBackColor = true;
-            btnWithdraw.Click += btnWithdraw_Click;
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnWithdraw.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWithdraw.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnWithdraw.Location = new System.Drawing.Point(297, 223);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(125, 40);
+            this.btnWithdraw.TabIndex = 2;
+            this.btnWithdraw.Text = "Withdraw";
+            this.btnWithdraw.UseVisualStyleBackColor = false;
             // 
             // txtBoxWithdraw
             // 
-            txtBoxWithdraw.Location = new Point(13, 47);
-            txtBoxWithdraw.Name = "txtBoxWithdraw";
-            txtBoxWithdraw.Size = new Size(169, 23);
-            txtBoxWithdraw.TabIndex = 1;
+            this.txtBoxWithdraw.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtBoxWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxWithdraw.Location = new System.Drawing.Point(117, 129);
+            this.txtBoxWithdraw.Name = "txtBoxWithdraw";
+            this.txtBoxWithdraw.Size = new System.Drawing.Size(169, 33);
+            this.txtBoxWithdraw.TabIndex = 1;
             // 
             // lblWithdraw
             // 
-            lblWithdraw.AutoSize = true;
-            lblWithdraw.Location = new Point(10, 23);
-            lblWithdraw.Name = "lblWithdraw";
-            lblWithdraw.Size = new Size(149, 15);
-            lblWithdraw.TabIndex = 0;
-            lblWithdraw.Text = "Enter Amount to Withdraw";
+            this.lblWithdraw.AutoSize = true;
+            this.lblWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWithdraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblWithdraw.Location = new System.Drawing.Point(77, 101);
+            this.lblWithdraw.Name = "lblWithdraw";
+            this.lblWithdraw.Size = new System.Drawing.Size(253, 25);
+            this.lblWithdraw.TabIndex = 0;
+            this.lblWithdraw.Text = "Enter Amount to Withdraw";
             // 
             // lbltxtBalance
             // 
-            lbltxtBalance.AutoSize = true;
-            lbltxtBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lbltxtBalance.Location = new Point(12, 9);
-            lbltxtBalance.Name = "lbltxtBalance";
-            lbltxtBalance.RightToLeft = RightToLeft.Yes;
-            lbltxtBalance.Size = new Size(80, 25);
-            lbltxtBalance.TabIndex = 5;
-            lbltxtBalance.Text = "Balance";
-            lbltxtBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lbltxtBalance.AutoSize = true;
+            this.lbltxtBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltxtBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lbltxtBalance.Location = new System.Drawing.Point(20, 259);
+            this.lbltxtBalance.Name = "lbltxtBalance";
+            this.lbltxtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbltxtBalance.Size = new System.Drawing.Size(80, 25);
+            this.lbltxtBalance.TabIndex = 5;
+            this.lbltxtBalance.Text = "Balance";
+            this.lbltxtBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBalance
             // 
-            lblBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBalance.Location = new Point(112, 9);
-            lblBalance.Name = "lblBalance";
-            lblBalance.RightToLeft = RightToLeft.Yes;
-            lblBalance.Size = new Size(110, 25);
-            lblBalance.TabIndex = 6;
-            lblBalance.Text = "0";
-            lblBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblBalance.Location = new System.Drawing.Point(12, 284);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblBalance.Size = new System.Drawing.Size(100, 25);
+            this.lblBalance.TabIndex = 6;
+            this.lblBalance.Text = "0";
+            this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(12, 304);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(200, 23);
-            btnLogout.TabIndex = 10;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.Crimson;
+            this.btnLogout.Location = new System.Drawing.Point(297, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(125, 40);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Crimson;
+            this.button1.Location = new System.Drawing.Point(297, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 40);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // WithdrawForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            ClientSize = new Size(234, 339);
-            Controls.Add(btnLogout);
-            Controls.Add(lblBalance);
-            Controls.Add(lbltxtBalance);
-            Controls.Add(grpboxWithdraw);
-            MinimizeBox = false;
-            Name = "WithdrawForm";
-            Text = "WithdrawForm";
-            grpboxWithdraw.ResumeLayout(false);
-            grpboxWithdraw.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblWithdraw);
+            this.Controls.Add(this.txtBoxWithdraw);
+            this.Controls.Add(this.btnWithdraw);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.lbltxtBalance);
+            this.MinimizeBox = false;
+            this.Name = "WithdrawForm";
+            this.Text = "WithdrawForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private GroupBox grpboxWithdraw;
         private Button btnWithdraw;
         private TextBox txtBoxWithdraw;
         private Label lblWithdraw;
         private Label lbltxtBalance;
         private Label lblBalance;
         private Button btnLogout;
+        private Button button1;
     }
 }

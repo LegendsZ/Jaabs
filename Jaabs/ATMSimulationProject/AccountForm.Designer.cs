@@ -28,274 +28,281 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblWelcome = new Label();
-            lbltxtBalance = new Label();
-            lblBalance = new Label();
-            grpboxWithdraw = new GroupBox();
-            btnWithdraw = new Button();
-            txtBoxWithdraw = new TextBox();
-            lblWithdraw = new Label();
-            grpboxDeposit = new GroupBox();
-            grpboxType = new GroupBox();
-            radioButton1 = new RadioButton();
-            radiobtnCash = new RadioButton();
-            btnDeposit = new Button();
-            txtboxDeposit = new TextBox();
-            lblDeposit = new Label();
-            grpboxTransfer = new GroupBox();
-            lblRecipientAccount = new Label();
-            combobxRecipients = new ComboBox();
-            btnTransfer = new Button();
-            txtboxTransfer = new TextBox();
-            lblTransfer = new Label();
-            btnLogout = new Button();
-            grpboxWithdraw.SuspendLayout();
-            grpboxDeposit.SuspendLayout();
-            grpboxType.SuspendLayout();
-            grpboxTransfer.SuspendLayout();
-            SuspendLayout();
-            // 
-            // lblWelcome
-            // 
-            lblWelcome.AutoSize = true;
-            lblWelcome.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblWelcome.Location = new Point(12, 9);
-            lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(93, 25);
-            lblWelcome.TabIndex = 0;
-            lblWelcome.Text = "Welcome";
+            this.lbltxtBalance = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.grpboxWithdraw = new System.Windows.Forms.GroupBox();
+            this.btnWithdraw = new System.Windows.Forms.Button();
+            this.txtBoxWithdraw = new System.Windows.Forms.TextBox();
+            this.lblWithdraw = new System.Windows.Forms.Label();
+            this.grpboxDeposit = new System.Windows.Forms.GroupBox();
+            this.grpboxType = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radiobtnCash = new System.Windows.Forms.RadioButton();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.txtboxDeposit = new System.Windows.Forms.TextBox();
+            this.lblDeposit = new System.Windows.Forms.Label();
+            this.grpboxTransfer = new System.Windows.Forms.GroupBox();
+            this.lblRecipientAccount = new System.Windows.Forms.Label();
+            this.combobxRecipients = new System.Windows.Forms.ComboBox();
+            this.btnTransfer = new System.Windows.Forms.Button();
+            this.txtboxTransfer = new System.Windows.Forms.TextBox();
+            this.lblTransfer = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.grpboxWithdraw.SuspendLayout();
+            this.grpboxDeposit.SuspendLayout();
+            this.grpboxType.SuspendLayout();
+            this.grpboxTransfer.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lbltxtBalance
             // 
-            lbltxtBalance.AutoSize = true;
-            lbltxtBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lbltxtBalance.Location = new Point(492, 9);
-            lbltxtBalance.Name = "lbltxtBalance";
-            lbltxtBalance.RightToLeft = RightToLeft.Yes;
-            lbltxtBalance.Size = new Size(80, 25);
-            lbltxtBalance.TabIndex = 1;
-            lbltxtBalance.Text = "Balance";
-            lbltxtBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lbltxtBalance.AutoSize = true;
+            this.lbltxtBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltxtBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lbltxtBalance.Location = new System.Drawing.Point(232, 12);
+            this.lbltxtBalance.Name = "lbltxtBalance";
+            this.lbltxtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbltxtBalance.Size = new System.Drawing.Size(80, 25);
+            this.lbltxtBalance.TabIndex = 1;
+            this.lbltxtBalance.Text = "Balance";
+            this.lbltxtBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBalance
             // 
-            lblBalance.AutoSize = true;
-            lblBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBalance.Location = new Point(678, 9);
-            lblBalance.Name = "lblBalance";
-            lblBalance.RightToLeft = RightToLeft.Yes;
-            lblBalance.Size = new Size(23, 25);
-            lblBalance.TabIndex = 2;
-            lblBalance.Text = "0";
-            lblBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBalance.Location = new System.Drawing.Point(678, 9);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblBalance.Size = new System.Drawing.Size(23, 25);
+            this.lblBalance.TabIndex = 2;
+            this.lblBalance.Text = "0";
+            this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpboxWithdraw
             // 
-            grpboxWithdraw.Controls.Add(btnWithdraw);
-            grpboxWithdraw.Controls.Add(txtBoxWithdraw);
-            grpboxWithdraw.Controls.Add(lblWithdraw);
-            grpboxWithdraw.Location = new Point(12, 47);
-            grpboxWithdraw.Name = "grpboxWithdraw";
-            grpboxWithdraw.Size = new Size(200, 234);
-            grpboxWithdraw.TabIndex = 3;
-            grpboxWithdraw.TabStop = false;
-            grpboxWithdraw.Text = "Withdraw";
+            this.grpboxWithdraw.Controls.Add(this.btnWithdraw);
+            this.grpboxWithdraw.Controls.Add(this.txtBoxWithdraw);
+            this.grpboxWithdraw.Controls.Add(this.lblWithdraw);
+            this.grpboxWithdraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.grpboxWithdraw.Location = new System.Drawing.Point(12, 12);
+            this.grpboxWithdraw.Name = "grpboxWithdraw";
+            this.grpboxWithdraw.Size = new System.Drawing.Size(200, 83);
+            this.grpboxWithdraw.TabIndex = 3;
+            this.grpboxWithdraw.TabStop = false;
+            this.grpboxWithdraw.Text = "Withdraw";
             // 
             // btnWithdraw
             // 
-            btnWithdraw.Location = new Point(13, 205);
-            btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(169, 23);
-            btnWithdraw.TabIndex = 2;
-            btnWithdraw.Text = "Withdraw";
-            btnWithdraw.UseVisualStyleBackColor = true;
-            btnWithdraw.Click += btnWithdraw_Click;
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnWithdraw.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnWithdraw.Location = new System.Drawing.Point(13, 205);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(169, 23);
+            this.btnWithdraw.TabIndex = 2;
+            this.btnWithdraw.Text = "Withdraw";
+            this.btnWithdraw.UseVisualStyleBackColor = false;
             // 
             // txtBoxWithdraw
             // 
-            txtBoxWithdraw.Location = new Point(13, 47);
-            txtBoxWithdraw.Name = "txtBoxWithdraw";
-            txtBoxWithdraw.Size = new Size(169, 23);
-            txtBoxWithdraw.TabIndex = 1;
+            this.txtBoxWithdraw.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtBoxWithdraw.Location = new System.Drawing.Point(13, 47);
+            this.txtBoxWithdraw.Name = "txtBoxWithdraw";
+            this.txtBoxWithdraw.Size = new System.Drawing.Size(169, 23);
+            this.txtBoxWithdraw.TabIndex = 1;
             // 
             // lblWithdraw
             // 
-            lblWithdraw.AutoSize = true;
-            lblWithdraw.Location = new Point(10, 23);
-            lblWithdraw.Name = "lblWithdraw";
-            lblWithdraw.Size = new Size(149, 15);
-            lblWithdraw.TabIndex = 0;
-            lblWithdraw.Text = "Enter Amount to Withdraw";
+            this.lblWithdraw.AutoSize = true;
+            this.lblWithdraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblWithdraw.Location = new System.Drawing.Point(10, 23);
+            this.lblWithdraw.Name = "lblWithdraw";
+            this.lblWithdraw.Size = new System.Drawing.Size(149, 15);
+            this.lblWithdraw.TabIndex = 0;
+            this.lblWithdraw.Text = "Enter Amount to Withdraw";
             // 
             // grpboxDeposit
             // 
-            grpboxDeposit.Controls.Add(grpboxType);
-            grpboxDeposit.Controls.Add(btnDeposit);
-            grpboxDeposit.Controls.Add(txtboxDeposit);
-            grpboxDeposit.Controls.Add(lblDeposit);
-            grpboxDeposit.Location = new Point(232, 47);
-            grpboxDeposit.Name = "grpboxDeposit";
-            grpboxDeposit.Size = new Size(200, 234);
-            grpboxDeposit.TabIndex = 4;
-            grpboxDeposit.TabStop = false;
-            grpboxDeposit.Text = "Deposit";
+            this.grpboxDeposit.Controls.Add(this.grpboxType);
+            this.grpboxDeposit.Controls.Add(this.btnDeposit);
+            this.grpboxDeposit.Controls.Add(this.txtboxDeposit);
+            this.grpboxDeposit.Controls.Add(this.lblDeposit);
+            this.grpboxDeposit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.grpboxDeposit.Location = new System.Drawing.Point(12, 111);
+            this.grpboxDeposit.Name = "grpboxDeposit";
+            this.grpboxDeposit.Size = new System.Drawing.Size(200, 183);
+            this.grpboxDeposit.TabIndex = 4;
+            this.grpboxDeposit.TabStop = false;
+            this.grpboxDeposit.Text = "Deposit";
             // 
             // grpboxType
             // 
-            grpboxType.Controls.Add(radioButton1);
-            grpboxType.Controls.Add(radiobtnCash);
-            grpboxType.Location = new Point(7, 90);
-            grpboxType.Name = "grpboxType";
-            grpboxType.Size = new Size(179, 86);
-            grpboxType.TabIndex = 4;
-            grpboxType.TabStop = false;
-            grpboxType.Text = "Type";
+            this.grpboxType.Controls.Add(this.radioButton1);
+            this.grpboxType.Controls.Add(this.radiobtnCash);
+            this.grpboxType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.grpboxType.Location = new System.Drawing.Point(7, 90);
+            this.grpboxType.Name = "grpboxType";
+            this.grpboxType.Size = new System.Drawing.Size(179, 86);
+            this.grpboxType.TabIndex = 4;
+            this.grpboxType.TabStop = false;
+            this.grpboxType.Text = "Type";
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(11, 49);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(66, 19);
-            radioButton1.TabIndex = 1;
-            radioButton1.Text = "Cheque";
-            radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radioButton1.Location = new System.Drawing.Point(11, 49);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(66, 19);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.Text = "Cheque";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radiobtnCash
             // 
-            radiobtnCash.AutoSize = true;
-            radiobtnCash.Checked = true;
-            radiobtnCash.Location = new Point(11, 24);
-            radiobtnCash.Name = "radiobtnCash";
-            radiobtnCash.Size = new Size(51, 19);
-            radiobtnCash.TabIndex = 0;
-            radiobtnCash.TabStop = true;
-            radiobtnCash.Text = "Cash";
-            radiobtnCash.UseVisualStyleBackColor = true;
+            this.radiobtnCash.AutoSize = true;
+            this.radiobtnCash.Checked = true;
+            this.radiobtnCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radiobtnCash.Location = new System.Drawing.Point(11, 24);
+            this.radiobtnCash.Name = "radiobtnCash";
+            this.radiobtnCash.Size = new System.Drawing.Size(51, 19);
+            this.radiobtnCash.TabIndex = 0;
+            this.radiobtnCash.TabStop = true;
+            this.radiobtnCash.Text = "Cash";
+            this.radiobtnCash.UseVisualStyleBackColor = true;
             // 
             // btnDeposit
             // 
-            btnDeposit.Location = new Point(6, 205);
-            btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(169, 23);
-            btnDeposit.TabIndex = 3;
-            btnDeposit.Text = "Deposit";
-            btnDeposit.UseVisualStyleBackColor = true;
-            btnDeposit.Click += btnDeposit_Click;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnDeposit.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnDeposit.Location = new System.Drawing.Point(6, 205);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(169, 23);
+            this.btnDeposit.TabIndex = 3;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = false;
             // 
             // txtboxDeposit
             // 
-            txtboxDeposit.Location = new Point(6, 47);
-            txtboxDeposit.Name = "txtboxDeposit";
-            txtboxDeposit.Size = new Size(169, 23);
-            txtboxDeposit.TabIndex = 2;
+            this.txtboxDeposit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtboxDeposit.Location = new System.Drawing.Point(6, 47);
+            this.txtboxDeposit.Name = "txtboxDeposit";
+            this.txtboxDeposit.Size = new System.Drawing.Size(169, 23);
+            this.txtboxDeposit.TabIndex = 2;
             // 
             // lblDeposit
             // 
-            lblDeposit.AutoSize = true;
-            lblDeposit.Location = new Point(6, 23);
-            lblDeposit.Name = "lblDeposit";
-            lblDeposit.Size = new Size(138, 15);
-            lblDeposit.TabIndex = 1;
-            lblDeposit.Text = "Enter Amount to Deposit";
+            this.lblDeposit.AutoSize = true;
+            this.lblDeposit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblDeposit.Location = new System.Drawing.Point(6, 23);
+            this.lblDeposit.Name = "lblDeposit";
+            this.lblDeposit.Size = new System.Drawing.Size(138, 15);
+            this.lblDeposit.TabIndex = 1;
+            this.lblDeposit.Text = "Enter Amount to Deposit";
             // 
             // grpboxTransfer
             // 
-            grpboxTransfer.Controls.Add(lblRecipientAccount);
-            grpboxTransfer.Controls.Add(combobxRecipients);
-            grpboxTransfer.Controls.Add(btnTransfer);
-            grpboxTransfer.Controls.Add(txtboxTransfer);
-            grpboxTransfer.Controls.Add(lblTransfer);
-            grpboxTransfer.Location = new Point(463, 47);
-            grpboxTransfer.Name = "grpboxTransfer";
-            grpboxTransfer.Size = new Size(200, 234);
-            grpboxTransfer.TabIndex = 5;
-            grpboxTransfer.TabStop = false;
-            grpboxTransfer.Text = "Transfer";
+            this.grpboxTransfer.Controls.Add(this.lblRecipientAccount);
+            this.grpboxTransfer.Controls.Add(this.combobxRecipients);
+            this.grpboxTransfer.Controls.Add(this.btnTransfer);
+            this.grpboxTransfer.Controls.Add(this.txtboxTransfer);
+            this.grpboxTransfer.Controls.Add(this.lblTransfer);
+            this.grpboxTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.grpboxTransfer.Location = new System.Drawing.Point(232, 40);
+            this.grpboxTransfer.Name = "grpboxTransfer";
+            this.grpboxTransfer.Size = new System.Drawing.Size(200, 192);
+            this.grpboxTransfer.TabIndex = 5;
+            this.grpboxTransfer.TabStop = false;
+            this.grpboxTransfer.Text = "Transfer";
             // 
             // lblRecipientAccount
             // 
-            lblRecipientAccount.AutoSize = true;
-            lblRecipientAccount.Location = new Point(6, 90);
-            lblRecipientAccount.Name = "lblRecipientAccount";
-            lblRecipientAccount.Size = new Size(104, 15);
-            lblRecipientAccount.TabIndex = 6;
-            lblRecipientAccount.Text = "Recipient Account";
+            this.lblRecipientAccount.AutoSize = true;
+            this.lblRecipientAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblRecipientAccount.Location = new System.Drawing.Point(6, 90);
+            this.lblRecipientAccount.Name = "lblRecipientAccount";
+            this.lblRecipientAccount.Size = new System.Drawing.Size(104, 15);
+            this.lblRecipientAccount.TabIndex = 6;
+            this.lblRecipientAccount.Text = "Recipient Account";
             // 
             // combobxRecipients
             // 
-            combobxRecipients.FormattingEnabled = true;
-            combobxRecipients.Location = new Point(6, 113);
-            combobxRecipients.Name = "combobxRecipients";
-            combobxRecipients.Size = new Size(169, 23);
-            combobxRecipients.TabIndex = 5;
+            this.combobxRecipients.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.combobxRecipients.FormattingEnabled = true;
+            this.combobxRecipients.Location = new System.Drawing.Point(6, 113);
+            this.combobxRecipients.Name = "combobxRecipients";
+            this.combobxRecipients.Size = new System.Drawing.Size(169, 23);
+            this.combobxRecipients.TabIndex = 5;
             // 
             // btnTransfer
             // 
-            btnTransfer.Location = new Point(6, 205);
-            btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(169, 23);
-            btnTransfer.TabIndex = 4;
-            btnTransfer.Text = "Transfer";
-            btnTransfer.UseVisualStyleBackColor = true;
-            btnTransfer.Click += btnTransfer_Click;
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnTransfer.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnTransfer.Location = new System.Drawing.Point(6, 146);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(169, 23);
+            this.btnTransfer.TabIndex = 4;
+            this.btnTransfer.Text = "Transfer";
+            this.btnTransfer.UseVisualStyleBackColor = false;
             // 
             // txtboxTransfer
             // 
-            txtboxTransfer.Location = new Point(6, 47);
-            txtboxTransfer.Name = "txtboxTransfer";
-            txtboxTransfer.Size = new Size(169, 23);
-            txtboxTransfer.TabIndex = 3;
+            this.txtboxTransfer.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtboxTransfer.Location = new System.Drawing.Point(6, 47);
+            this.txtboxTransfer.Name = "txtboxTransfer";
+            this.txtboxTransfer.Size = new System.Drawing.Size(169, 23);
+            this.txtboxTransfer.TabIndex = 3;
             // 
             // lblTransfer
             // 
-            lblTransfer.AutoSize = true;
-            lblTransfer.Location = new Point(6, 23);
-            lblTransfer.Name = "lblTransfer";
-            lblTransfer.Size = new Size(139, 15);
-            lblTransfer.TabIndex = 2;
-            lblTransfer.Text = "Enter Amount to Transfer";
+            this.lblTransfer.AutoSize = true;
+            this.lblTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblTransfer.Location = new System.Drawing.Point(6, 23);
+            this.lblTransfer.Name = "lblTransfer";
+            this.lblTransfer.Size = new System.Drawing.Size(139, 15);
+            this.lblTransfer.TabIndex = 2;
+            this.lblTransfer.Text = "Enter Amount to Transfer";
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(469, 296);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(194, 23);
-            btnLogout.TabIndex = 10;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnLogout.ForeColor = System.Drawing.Color.Crimson;
+            this.btnLogout.Location = new System.Drawing.Point(271, 250);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(136, 44);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // AccountForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(716, 331);
-            Controls.Add(btnLogout);
-            Controls.Add(grpboxTransfer);
-            Controls.Add(grpboxDeposit);
-            Controls.Add(grpboxWithdraw);
-            Controls.Add(lblBalance);
-            Controls.Add(lbltxtBalance);
-            Controls.Add(lblWelcome);
-            MaximizeBox = false;
-            Name = "AccountForm";
-            Text = "ATM Simulation";
-            grpboxWithdraw.ResumeLayout(false);
-            grpboxWithdraw.PerformLayout();
-            grpboxDeposit.ResumeLayout(false);
-            grpboxDeposit.PerformLayout();
-            grpboxType.ResumeLayout(false);
-            grpboxType.PerformLayout();
-            grpboxTransfer.ResumeLayout(false);
-            grpboxTransfer.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.grpboxTransfer);
+            this.Controls.Add(this.grpboxDeposit);
+            this.Controls.Add(this.grpboxWithdraw);
+            this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.lbltxtBalance);
+            this.MaximizeBox = false;
+            this.Name = "AccountForm";
+            this.Text = "ATM Simulation";
+            this.grpboxWithdraw.ResumeLayout(false);
+            this.grpboxWithdraw.PerformLayout();
+            this.grpboxDeposit.ResumeLayout(false);
+            this.grpboxDeposit.PerformLayout();
+            this.grpboxType.ResumeLayout(false);
+            this.grpboxType.PerformLayout();
+            this.grpboxTransfer.ResumeLayout(false);
+            this.grpboxTransfer.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private Label lblWelcome;
         private Label lbltxtBalance;
         private Label lblBalance;
         private GroupBox grpboxWithdraw;

@@ -80,5 +80,10 @@ namespace ATMSimulationProject
             this.Visible = false;
             accountForm.Show();
         }
+
+        private void txtboxPIN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

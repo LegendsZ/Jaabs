@@ -52,5 +52,10 @@ namespace ATMSimulationProject
             new LoginWithPINForm().Show();
             Close();
         }
+
+        private void grpboxWithdraw_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

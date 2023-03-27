@@ -36,5 +36,35 @@ namespace ATMSimulationProject
             mainInterface.Show();
             Hide();
         }
+
+        private void lblAccountNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxAccountNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPIN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpboxLogin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginWithPINForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

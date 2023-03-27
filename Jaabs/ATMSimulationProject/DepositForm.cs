@@ -43,5 +43,14 @@ namespace ATMSimulationProject
             new LoginWithPINForm().Show();
             this.Close();
         }
+
+        private void DepositForm_Load(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
     }
 }

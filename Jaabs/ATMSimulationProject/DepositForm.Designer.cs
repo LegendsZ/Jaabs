@@ -28,148 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxDeposit = new GroupBox();
-            grpboxType = new GroupBox();
-            radioButton1 = new RadioButton();
-            radiobtnCash = new RadioButton();
-            btnDeposit = new Button();
-            txtboxDeposit = new TextBox();
-            lblDeposit = new Label();
-            lbltxtBalance = new Label();
-            lblBalance = new Label();
-            btnLogout = new Button();
-            grpboxDeposit.SuspendLayout();
-            grpboxType.SuspendLayout();
-            SuspendLayout();
-            // 
-            // grpboxDeposit
-            // 
-            grpboxDeposit.Controls.Add(grpboxType);
-            grpboxDeposit.Controls.Add(btnDeposit);
-            grpboxDeposit.Controls.Add(txtboxDeposit);
-            grpboxDeposit.Controls.Add(lblDeposit);
-            grpboxDeposit.Location = new Point(12, 54);
-            grpboxDeposit.Name = "grpboxDeposit";
-            grpboxDeposit.Size = new Size(200, 234);
-            grpboxDeposit.TabIndex = 5;
-            grpboxDeposit.TabStop = false;
-            grpboxDeposit.Text = "Deposit";
+            this.grpboxType = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radiobtnCash = new System.Windows.Forms.RadioButton();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.txtboxDeposit = new System.Windows.Forms.TextBox();
+            this.lblDeposit = new System.Windows.Forms.Label();
+            this.lbltxtBalance = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.combobxRecipients = new System.Windows.Forms.ComboBox();
+            this.lblRecipientAccount = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.grpboxType.SuspendLayout();
+            this.SuspendLayout();
             // 
             // grpboxType
             // 
-            grpboxType.Controls.Add(radioButton1);
-            grpboxType.Controls.Add(radiobtnCash);
-            grpboxType.Location = new Point(7, 90);
-            grpboxType.Name = "grpboxType";
-            grpboxType.Size = new Size(179, 86);
-            grpboxType.TabIndex = 4;
-            grpboxType.TabStop = false;
-            grpboxType.Text = "Type";
+            this.grpboxType.Controls.Add(this.radioButton1);
+            this.grpboxType.Controls.Add(this.radiobtnCash);
+            this.grpboxType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grpboxType.ForeColor = System.Drawing.Color.Yellow;
+            this.grpboxType.Location = new System.Drawing.Point(41, 170);
+            this.grpboxType.Name = "grpboxType";
+            this.grpboxType.Size = new System.Drawing.Size(179, 86);
+            this.grpboxType.TabIndex = 4;
+            this.grpboxType.TabStop = false;
+            this.grpboxType.Text = "Type";
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(11, 49);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(66, 19);
-            radioButton1.TabIndex = 1;
-            radioButton1.Text = "Cheque";
-            radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radioButton1.Location = new System.Drawing.Point(11, 49);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(95, 29);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.Text = "Cheque";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radiobtnCash
             // 
-            radiobtnCash.AutoSize = true;
-            radiobtnCash.Checked = true;
-            radiobtnCash.Location = new Point(11, 24);
-            radiobtnCash.Name = "radiobtnCash";
-            radiobtnCash.Size = new Size(51, 19);
-            radiobtnCash.TabIndex = 0;
-            radiobtnCash.TabStop = true;
-            radiobtnCash.Text = "Cash";
-            radiobtnCash.UseVisualStyleBackColor = true;
+            this.radiobtnCash.AutoSize = true;
+            this.radiobtnCash.Checked = true;
+            this.radiobtnCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radiobtnCash.Location = new System.Drawing.Point(11, 24);
+            this.radiobtnCash.Name = "radiobtnCash";
+            this.radiobtnCash.Size = new System.Drawing.Size(71, 29);
+            this.radiobtnCash.TabIndex = 0;
+            this.radiobtnCash.TabStop = true;
+            this.radiobtnCash.Text = "Cash";
+            this.radiobtnCash.UseVisualStyleBackColor = true;
             // 
             // btnDeposit
             // 
-            btnDeposit.Location = new Point(6, 205);
-            btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(180, 23);
-            btnDeposit.TabIndex = 3;
-            btnDeposit.Text = "Deposit";
-            btnDeposit.UseVisualStyleBackColor = true;
-            btnDeposit.Click += btnDeposit_Click;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnDeposit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDeposit.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnDeposit.Location = new System.Drawing.Point(297, 223);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(125, 40);
+            this.btnDeposit.TabIndex = 3;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = false;
             // 
             // txtboxDeposit
             // 
-            txtboxDeposit.Location = new Point(6, 47);
-            txtboxDeposit.Name = "txtboxDeposit";
-            txtboxDeposit.Size = new Size(180, 23);
-            txtboxDeposit.TabIndex = 2;
+            this.txtboxDeposit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtboxDeposit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtboxDeposit.Location = new System.Drawing.Point(41, 55);
+            this.txtboxDeposit.Name = "txtboxDeposit";
+            this.txtboxDeposit.Size = new System.Drawing.Size(180, 33);
+            this.txtboxDeposit.TabIndex = 2;
             // 
             // lblDeposit
             // 
-            lblDeposit.AutoSize = true;
-            lblDeposit.Location = new Point(6, 23);
-            lblDeposit.Name = "lblDeposit";
-            lblDeposit.Size = new Size(138, 15);
-            lblDeposit.TabIndex = 1;
-            lblDeposit.Text = "Enter Amount to Deposit";
+            this.lblDeposit.AutoSize = true;
+            this.lblDeposit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDeposit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblDeposit.Location = new System.Drawing.Point(12, 12);
+            this.lblDeposit.Name = "lblDeposit";
+            this.lblDeposit.Size = new System.Drawing.Size(234, 25);
+            this.lblDeposit.TabIndex = 1;
+            this.lblDeposit.Text = "Enter Amount to Deposit";
             // 
             // lbltxtBalance
             // 
-            lbltxtBalance.AutoSize = true;
-            lbltxtBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lbltxtBalance.Location = new Point(12, 9);
-            lbltxtBalance.Name = "lbltxtBalance";
-            lbltxtBalance.RightToLeft = RightToLeft.Yes;
-            lbltxtBalance.Size = new Size(80, 25);
-            lbltxtBalance.TabIndex = 6;
-            lbltxtBalance.Text = "Balance";
-            lbltxtBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lbltxtBalance.AutoSize = true;
+            this.lbltxtBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltxtBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lbltxtBalance.Location = new System.Drawing.Point(12, 259);
+            this.lbltxtBalance.Name = "lbltxtBalance";
+            this.lbltxtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbltxtBalance.Size = new System.Drawing.Size(80, 25);
+            this.lbltxtBalance.TabIndex = 6;
+            this.lbltxtBalance.Text = "Balance";
+            this.lbltxtBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBalance
             // 
-            lblBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBalance.Location = new Point(129, 9);
-            lblBalance.Name = "lblBalance";
-            lblBalance.RightToLeft = RightToLeft.Yes;
-            lblBalance.Size = new Size(93, 25);
-            lblBalance.TabIndex = 7;
-            lblBalance.Text = "0";
-            lblBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblBalance.Location = new System.Drawing.Point(12, 284);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblBalance.Size = new System.Drawing.Size(93, 25);
+            this.lblBalance.TabIndex = 7;
+            this.lblBalance.Text = "0";
+            this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(12, 305);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(200, 23);
-            btnLogout.TabIndex = 10;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.Crimson;
+            this.btnLogout.Location = new System.Drawing.Point(297, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(125, 40);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // combobxRecipients
+            // 
+            this.combobxRecipients.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.combobxRecipients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.combobxRecipients.FormattingEnabled = true;
+            this.combobxRecipients.Items.AddRange(new object[] {
+            "James Smith",
+            "Jane Doe",
+            "Peter Crow",
+            "Sam Wise",
+            "Dolly West"});
+            this.combobxRecipients.Location = new System.Drawing.Point(41, 119);
+            this.combobxRecipients.Name = "combobxRecipients";
+            this.combobxRecipients.Size = new System.Drawing.Size(169, 33);
+            this.combobxRecipients.TabIndex = 20;
+            // 
+            // lblRecipientAccount
+            // 
+            this.lblRecipientAccount.AutoSize = true;
+            this.lblRecipientAccount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRecipientAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblRecipientAccount.Location = new System.Drawing.Point(41, 91);
+            this.lblRecipientAccount.Name = "lblRecipientAccount";
+            this.lblRecipientAccount.Size = new System.Drawing.Size(173, 25);
+            this.lblRecipientAccount.TabIndex = 21;
+            this.lblRecipientAccount.Text = "Recipient Account";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.Crimson;
+            this.button2.Location = new System.Drawing.Point(297, 269);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // DepositForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(234, 340);
-            Controls.Add(btnLogout);
-            Controls.Add(lblBalance);
-            Controls.Add(lbltxtBalance);
-            Controls.Add(grpboxDeposit);
-            MaximizeBox = false;
-            Name = "DepositForm";
-            Text = "DepositForm";
-            grpboxDeposit.ResumeLayout(false);
-            grpboxDeposit.PerformLayout();
-            grpboxType.ResumeLayout(false);
-            grpboxType.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.Controls.Add(this.grpboxType);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtboxDeposit);
+            this.Controls.Add(this.combobxRecipients);
+            this.Controls.Add(this.lblDeposit);
+            this.Controls.Add(this.btnDeposit);
+            this.Controls.Add(this.lblRecipientAccount);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.lbltxtBalance);
+            this.MaximizeBox = false;
+            this.Name = "DepositForm";
+            this.Text = "DepositForm";
+            this.Load += new System.EventHandler(this.DepositForm_Load);
+            this.grpboxType.ResumeLayout(false);
+            this.grpboxType.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private GroupBox grpboxDeposit;
         private GroupBox grpboxType;
         private RadioButton radioButton1;
         private RadioButton radiobtnCash;
@@ -179,5 +225,8 @@
         private Label lbltxtBalance;
         private Label lblBalance;
         private Button btnLogout;
+        private ComboBox combobxRecipients;
+        private Label lblRecipientAccount;
+        private Button button2;
     }
 }

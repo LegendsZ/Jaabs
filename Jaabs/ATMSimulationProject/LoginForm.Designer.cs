@@ -28,205 +28,210 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpboxLogin = new GroupBox();
-            btnLogin = new Button();
-            txtboxPIN = new TextBox();
-            txtboxAccountNumber = new TextBox();
-            lblPIN = new Label();
-            lblAccountNumber = new Label();
-            grpboxCreateAccount = new GroupBox();
-            lblAccount = new Label();
-            btnCreateAccount = new Button();
-            txtboxNewPIN = new TextBox();
-            txtboxFullName = new TextBox();
-            lblCreatePin = new Label();
-            lblFullName = new Label();
-            grpboxAccountType = new GroupBox();
-            radioBtnSavings = new RadioButton();
-            radioBtnChecking = new RadioButton();
-            grpboxLogin.SuspendLayout();
-            grpboxCreateAccount.SuspendLayout();
-            grpboxAccountType.SuspendLayout();
-            SuspendLayout();
-            // 
-            // grpboxLogin
-            // 
-            grpboxLogin.Controls.Add(btnLogin);
-            grpboxLogin.Controls.Add(txtboxPIN);
-            grpboxLogin.Controls.Add(txtboxAccountNumber);
-            grpboxLogin.Controls.Add(lblPIN);
-            grpboxLogin.Controls.Add(lblAccountNumber);
-            grpboxLogin.Location = new Point(12, 12);
-            grpboxLogin.Name = "grpboxLogin";
-            grpboxLogin.Size = new Size(259, 261);
-            grpboxLogin.TabIndex = 0;
-            grpboxLogin.TabStop = false;
-            grpboxLogin.Text = "Login";
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtboxPIN = new System.Windows.Forms.TextBox();
+            this.txtboxAccountNumber = new System.Windows.Forms.TextBox();
+            this.lblPIN = new System.Windows.Forms.Label();
+            this.lblAccountNumber = new System.Windows.Forms.Label();
+            this.grpboxCreateAccount = new System.Windows.Forms.GroupBox();
+            this.grpboxAccountType = new System.Windows.Forms.GroupBox();
+            this.radioBtnSavings = new System.Windows.Forms.RadioButton();
+            this.radioBtnChecking = new System.Windows.Forms.RadioButton();
+            this.lblAccount = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
+            this.txtboxNewPIN = new System.Windows.Forms.TextBox();
+            this.txtboxFullName = new System.Windows.Forms.TextBox();
+            this.lblCreatePin = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grpboxCreateAccount.SuspendLayout();
+            this.grpboxAccountType.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(6, 136);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(235, 23);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
+            this.btnLogin.Location = new System.Drawing.Point(12, 193);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(235, 23);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // txtboxPIN
             // 
-            txtboxPIN.Location = new Point(6, 92);
-            txtboxPIN.Name = "txtboxPIN";
-            txtboxPIN.Size = new Size(235, 23);
-            txtboxPIN.TabIndex = 4;
+            this.txtboxPIN.Location = new System.Drawing.Point(12, 148);
+            this.txtboxPIN.Name = "txtboxPIN";
+            this.txtboxPIN.Size = new System.Drawing.Size(235, 23);
+            this.txtboxPIN.TabIndex = 4;
+            this.txtboxPIN.TextChanged += new System.EventHandler(this.txtboxPIN_TextChanged);
             // 
             // txtboxAccountNumber
             // 
-            txtboxAccountNumber.Location = new Point(6, 37);
-            txtboxAccountNumber.Name = "txtboxAccountNumber";
-            txtboxAccountNumber.Size = new Size(235, 23);
-            txtboxAccountNumber.TabIndex = 3;
+            this.txtboxAccountNumber.Location = new System.Drawing.Point(12, 78);
+            this.txtboxAccountNumber.Name = "txtboxAccountNumber";
+            this.txtboxAccountNumber.Size = new System.Drawing.Size(235, 23);
+            this.txtboxAccountNumber.TabIndex = 3;
             // 
             // lblPIN
             // 
-            lblPIN.AutoSize = true;
-            lblPIN.Location = new Point(6, 74);
-            lblPIN.Name = "lblPIN";
-            lblPIN.Size = new Size(26, 15);
-            lblPIN.TabIndex = 1;
-            lblPIN.Text = "PIN";
+            this.lblPIN.AutoSize = true;
+            this.lblPIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblPIN.Location = new System.Drawing.Point(12, 112);
+            this.lblPIN.Name = "lblPIN";
+            this.lblPIN.Size = new System.Drawing.Size(26, 15);
+            this.lblPIN.TabIndex = 1;
+            this.lblPIN.Text = "PIN";
             // 
             // lblAccountNumber
             // 
-            lblAccountNumber.AutoSize = true;
-            lblAccountNumber.Location = new Point(6, 19);
-            lblAccountNumber.Name = "lblAccountNumber";
-            lblAccountNumber.Size = new Size(99, 15);
-            lblAccountNumber.TabIndex = 0;
-            lblAccountNumber.Text = "Account Number";
+            this.lblAccountNumber.AutoSize = true;
+            this.lblAccountNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblAccountNumber.Location = new System.Drawing.Point(12, 49);
+            this.lblAccountNumber.Name = "lblAccountNumber";
+            this.lblAccountNumber.Size = new System.Drawing.Size(99, 15);
+            this.lblAccountNumber.TabIndex = 0;
+            this.lblAccountNumber.Text = "Account Number";
             // 
             // grpboxCreateAccount
             // 
-            grpboxCreateAccount.Controls.Add(grpboxAccountType);
-            grpboxCreateAccount.Controls.Add(lblAccount);
-            grpboxCreateAccount.Controls.Add(btnCreateAccount);
-            grpboxCreateAccount.Controls.Add(txtboxNewPIN);
-            grpboxCreateAccount.Controls.Add(txtboxFullName);
-            grpboxCreateAccount.Controls.Add(lblCreatePin);
-            grpboxCreateAccount.Controls.Add(lblFullName);
-            grpboxCreateAccount.Location = new Point(299, 12);
-            grpboxCreateAccount.Name = "grpboxCreateAccount";
-            grpboxCreateAccount.Size = new Size(264, 261);
-            grpboxCreateAccount.TabIndex = 1;
-            grpboxCreateAccount.TabStop = false;
-            grpboxCreateAccount.Text = "Create Account";
-            // 
-            // lblAccount
-            // 
-            lblAccount.ForeColor = Color.Blue;
-            lblAccount.Location = new Point(7, 194);
-            lblAccount.Name = "lblAccount";
-            lblAccount.Size = new Size(234, 64);
-            lblAccount.TabIndex = 7;
-            lblAccount.Text = "After creating your account, you will be provided with an account number. Kindly memorize it or save it somewhere as it will be used to log you in.";
-            // 
-            // btnCreateAccount
-            // 
-            btnCreateAccount.Location = new Point(7, 168);
-            btnCreateAccount.Name = "btnCreateAccount";
-            btnCreateAccount.Size = new Size(235, 23);
-            btnCreateAccount.TabIndex = 6;
-            btnCreateAccount.Text = "Create Account";
-            btnCreateAccount.UseVisualStyleBackColor = true;
-            btnCreateAccount.Click += btnCreateAccount_Click;
-            // 
-            // txtboxNewPIN
-            // 
-            txtboxNewPIN.Location = new Point(6, 92);
-            txtboxNewPIN.Name = "txtboxNewPIN";
-            txtboxNewPIN.Size = new Size(235, 23);
-            txtboxNewPIN.TabIndex = 6;
-            // 
-            // txtboxFullName
-            // 
-            txtboxFullName.Location = new Point(6, 37);
-            txtboxFullName.Name = "txtboxFullName";
-            txtboxFullName.Size = new Size(235, 23);
-            txtboxFullName.TabIndex = 5;
-            // 
-            // lblCreatePin
-            // 
-            lblCreatePin.AutoSize = true;
-            lblCreatePin.Location = new Point(6, 74);
-            lblCreatePin.Name = "lblCreatePin";
-            lblCreatePin.Size = new Size(53, 15);
-            lblCreatePin.TabIndex = 2;
-            lblCreatePin.Text = "New PIN";
-            // 
-            // lblFullName
-            // 
-            lblFullName.AutoSize = true;
-            lblFullName.Location = new Point(6, 19);
-            lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(61, 15);
-            lblFullName.TabIndex = 0;
-            lblFullName.Text = "Full Name";
+            this.grpboxCreateAccount.Controls.Add(this.grpboxAccountType);
+            this.grpboxCreateAccount.Controls.Add(this.lblAccount);
+            this.grpboxCreateAccount.Controls.Add(this.btnCreateAccount);
+            this.grpboxCreateAccount.Controls.Add(this.txtboxNewPIN);
+            this.grpboxCreateAccount.Controls.Add(this.txtboxFullName);
+            this.grpboxCreateAccount.Controls.Add(this.lblCreatePin);
+            this.grpboxCreateAccount.Controls.Add(this.lblFullName);
+            this.grpboxCreateAccount.Location = new System.Drawing.Point(299, 12);
+            this.grpboxCreateAccount.Name = "grpboxCreateAccount";
+            this.grpboxCreateAccount.Size = new System.Drawing.Size(264, 261);
+            this.grpboxCreateAccount.TabIndex = 1;
+            this.grpboxCreateAccount.TabStop = false;
+            this.grpboxCreateAccount.Text = "Create Account";
             // 
             // grpboxAccountType
             // 
-            grpboxAccountType.Controls.Add(radioBtnSavings);
-            grpboxAccountType.Controls.Add(radioBtnChecking);
-            grpboxAccountType.Location = new Point(8, 121);
-            grpboxAccountType.Name = "grpboxAccountType";
-            grpboxAccountType.Size = new Size(234, 41);
-            grpboxAccountType.TabIndex = 9;
-            grpboxAccountType.TabStop = false;
-            grpboxAccountType.Text = "Account Type";
+            this.grpboxAccountType.Controls.Add(this.radioBtnSavings);
+            this.grpboxAccountType.Controls.Add(this.radioBtnChecking);
+            this.grpboxAccountType.Location = new System.Drawing.Point(8, 121);
+            this.grpboxAccountType.Name = "grpboxAccountType";
+            this.grpboxAccountType.Size = new System.Drawing.Size(234, 41);
+            this.grpboxAccountType.TabIndex = 9;
+            this.grpboxAccountType.TabStop = false;
+            this.grpboxAccountType.Text = "Account Type";
             // 
             // radioBtnSavings
             // 
-            radioBtnSavings.AutoSize = true;
-            radioBtnSavings.Location = new Point(144, 16);
-            radioBtnSavings.Name = "radioBtnSavings";
-            radioBtnSavings.Size = new Size(65, 19);
-            radioBtnSavings.TabIndex = 1;
-            radioBtnSavings.TabStop = true;
-            radioBtnSavings.Text = "Savings";
-            radioBtnSavings.UseVisualStyleBackColor = true;
+            this.radioBtnSavings.AutoSize = true;
+            this.radioBtnSavings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radioBtnSavings.Location = new System.Drawing.Point(144, 16);
+            this.radioBtnSavings.Name = "radioBtnSavings";
+            this.radioBtnSavings.Size = new System.Drawing.Size(65, 19);
+            this.radioBtnSavings.TabIndex = 1;
+            this.radioBtnSavings.TabStop = true;
+            this.radioBtnSavings.Text = "Savings";
+            this.radioBtnSavings.UseVisualStyleBackColor = true;
             // 
             // radioBtnChecking
             // 
-            radioBtnChecking.AutoSize = true;
-            radioBtnChecking.Location = new Point(9, 16);
-            radioBtnChecking.Name = "radioBtnChecking";
-            radioBtnChecking.Size = new Size(75, 19);
-            radioBtnChecking.TabIndex = 0;
-            radioBtnChecking.TabStop = true;
-            radioBtnChecking.Text = "Checking";
-            radioBtnChecking.UseVisualStyleBackColor = true;
+            this.radioBtnChecking.AutoSize = true;
+            this.radioBtnChecking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.radioBtnChecking.Location = new System.Drawing.Point(9, 16);
+            this.radioBtnChecking.Name = "radioBtnChecking";
+            this.radioBtnChecking.Size = new System.Drawing.Size(75, 19);
+            this.radioBtnChecking.TabIndex = 0;
+            this.radioBtnChecking.TabStop = true;
+            this.radioBtnChecking.Text = "Checking";
+            this.radioBtnChecking.UseVisualStyleBackColor = true;
+            // 
+            // lblAccount
+            // 
+            this.lblAccount.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAccount.Location = new System.Drawing.Point(7, 194);
+            this.lblAccount.Name = "lblAccount";
+            this.lblAccount.Size = new System.Drawing.Size(234, 64);
+            this.lblAccount.TabIndex = 7;
+            this.lblAccount.Text = "After creating your account, you will be provided with an account number. Kindly " +
+    "memorize it or save it somewhere as it will be used to log you in.";
+            // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.Location = new System.Drawing.Point(7, 168);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(235, 23);
+            this.btnCreateAccount.TabIndex = 6;
+            this.btnCreateAccount.Text = "Create Account";
+            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            // 
+            // txtboxNewPIN
+            // 
+            this.txtboxNewPIN.Location = new System.Drawing.Point(6, 92);
+            this.txtboxNewPIN.Name = "txtboxNewPIN";
+            this.txtboxNewPIN.Size = new System.Drawing.Size(235, 23);
+            this.txtboxNewPIN.TabIndex = 6;
+            // 
+            // txtboxFullName
+            // 
+            this.txtboxFullName.Location = new System.Drawing.Point(6, 37);
+            this.txtboxFullName.Name = "txtboxFullName";
+            this.txtboxFullName.Size = new System.Drawing.Size(235, 23);
+            this.txtboxFullName.TabIndex = 5;
+            // 
+            // lblCreatePin
+            // 
+            this.lblCreatePin.AutoSize = true;
+            this.lblCreatePin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblCreatePin.Location = new System.Drawing.Point(6, 74);
+            this.lblCreatePin.Name = "lblCreatePin";
+            this.lblCreatePin.Size = new System.Drawing.Size(53, 15);
+            this.lblCreatePin.TabIndex = 2;
+            this.lblCreatePin.Text = "New PIN";
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.lblFullName.Location = new System.Drawing.Point(6, 19);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(61, 15);
+            this.lblFullName.TabIndex = 0;
+            this.lblFullName.Text = "Full Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Login";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 285);
-            Controls.Add(grpboxCreateAccount);
-            Controls.Add(grpboxLogin);
-            MaximizeBox = false;
-            Name = "LoginForm";
-            Text = "ATM SImulation";
-            grpboxLogin.ResumeLayout(false);
-            grpboxLogin.PerformLayout();
-            grpboxCreateAccount.ResumeLayout(false);
-            grpboxCreateAccount.PerformLayout();
-            grpboxAccountType.ResumeLayout(false);
-            grpboxAccountType.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(637, 321);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.grpboxCreateAccount);
+            this.Controls.Add(this.txtboxPIN);
+            this.Controls.Add(this.txtboxAccountNumber);
+            this.Controls.Add(this.lblAccountNumber);
+            this.Controls.Add(this.lblPIN);
+            this.MaximizeBox = false;
+            this.Name = "LoginForm";
+            this.Text = "ATM SImulation";
+            this.grpboxCreateAccount.ResumeLayout(false);
+            this.grpboxCreateAccount.PerformLayout();
+            this.grpboxAccountType.ResumeLayout(false);
+            this.grpboxAccountType.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private GroupBox grpboxLogin;
         private GroupBox grpboxCreateAccount;
         private Label lblPIN;
         private Label lblAccountNumber;
@@ -242,5 +247,6 @@
         private GroupBox grpboxAccountType;
         private RadioButton radioBtnSavings;
         private RadioButton radioBtnChecking;
+        private Label label1;
     }
 }

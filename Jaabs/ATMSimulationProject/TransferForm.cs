@@ -49,6 +49,11 @@ namespace ATMSimulationProject
                 this.Close();
             }
         }
+
+        private void grpboxTransfer_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
