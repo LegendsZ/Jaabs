@@ -8,12 +8,12 @@ namespace JAABS.Bank
 {
     internal class Hash
     {
-        public string CustomerID { get; set; }
+        public string CardNumber { get; set; }
         public string HashString { get; set; }
 
-        public Hash (string customerID, string hashString)
+        public Hash (string cardNumber, string hashString)
         {
-            CustomerID = customerID;
+            CardNumber = cardNumber;
             HashString = hashString;
         }
     }

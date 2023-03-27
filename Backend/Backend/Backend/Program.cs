@@ -13,20 +13,21 @@ internal class Program
         Console.WriteLine("Hello World!\n");
 
 
-        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("CIBC", "30321758753", 1000, 1000, 1000, 1000, 1000, new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "custHashes"));
+        JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
         while(true)
         {
+            Console.Clear();
             while(!ATM.LoggedIn)
             {
                 ATM.CheckCard();
                 if (ATM.CardIn)
                 {
-                    Console.Write("Enter Pin (no verification yet so put in 1234 for valid login, anything else for invalid): ");
+                    Console.Write("Enter Pin: ");
                     string pin = Console.ReadLine();
                     ATM.LogIn(pin);
                 }
-                if (!ATM.CardIn)
+                else
                 {
                     System.Threading.Thread.Sleep(50);
                     Console.WriteLine("Waiting for card");
@@ -48,14 +49,34 @@ internal class Program
                     if (choice == "1")
                     {
                         Console.Write("Enter 1 to deposit cash, enter 2 to deposit cheque: ");
-                        string withdrawChoice = Console.ReadLine();
-                        if (withdrawChoice == "1")
+                        string depositChoice = Console.ReadLine();
+                        if (depositChoice == "1")
                         {
-
+                            Console.WriteLine("Enter 'savings' or 'chequing'");
+                            choice = Console.ReadLine();
+                            ATM.DepositCash(choice);
                         }
-                        else if (withdrawChoice == "2")
+                        else if (depositChoice == "2")
                         {
-
+                            Console.Write("Enter 'savings' or 'chequing'");
+                            choice = Console.ReadLine();
+                            //read from cheque
+                            JAABS.Bank.Cheque cheque = ATM.readCheque("cheque.txt");
+                            if (choice.Equals("savings") || choice.Equals("chequing")) //error checking
+                            {
+                                if (ATM.DepositCheques(cheque, choice))
+                                {
+                                    Console.WriteLine("Successfully deposited cheque!\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Failed to deposit cheque!\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to specify savings or chequing!\n");
+                            }
                         }
                     }
                     if (choice == "2")
@@ -76,7 +97,7 @@ internal class Program
                     {
                         Console.WriteLine("Meow");
                     }
-                    if (choice == "2")
+                    else if (choice == "2")
                     {
                         Console.Write("Enter how much: ");
                         string amount = Console.ReadLine();
