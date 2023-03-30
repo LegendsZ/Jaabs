@@ -17,7 +17,7 @@ namespace JAABS.Bank
         {
             Name = name;
             CustomerServer = customersFile;
-            Customers = CustomerReader(customersFile);
+            Customers = CustomerReader(customersFile,"payees.txt");
             Hashes = HashReader(hashFile);
         }
 
@@ -58,13 +58,29 @@ namespace JAABS.Bank
 
             return true;
         }
-        public JAABS.Customer.Customer[] CustomerReader(string customerFile)
+
+        public bool payPayee(JAABS.Customer.Customer cust, int amount)
+        {
+            foreach (JAABS.Customer.Customer tcust in Customers)
+            {
+                if (tcust.CardNumber.Equals(cust.CardNumber))
+                {
+                    tcust.Chequing.Cash += amount;
+                    UpdateServer();
+                    return true;
+                }
+            }
+            return false;
+        }
+        public JAABS.Customer.Customer[] CustomerReader(string customerFile,string payeeFile)
         {
             //stores the lines of data in the file into elements of an array
             string[] lines = File.ReadAllLines(customerFile);
             //customer array with the size of the number of customers in the file
             JAABS.Customer.Customer[] customers = new JAABS.Customer.Customer[lines.Length];
             int count = 0;
+
+            String[] payeeLines = System.IO.File.ReadAllLines(payeeFile);
 
             //iterates through each customer's data
             foreach (string line in lines)
@@ -83,6 +99,32 @@ namespace JAABS.Bank
                 //adds the customer to the array
                 customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving, atm, token[18], Int32.Parse(token[19]), Int32.Parse(token[20]));
                 count++;
+            }
+
+            int custID = 0;
+            foreach (string payeeLine in payeeLines)
+            {
+                string[] payeees = payeeLine.Split(',');
+                foreach (string word in payeees)
+                {
+                    string[] indivPayee = word.Split(':');
+                    //0th element will be name
+                    //1st element will be cardnumber
+                    int index = -1;
+                    for (int i = 0; i < customers.Length; i++)
+                    {
+                        if (customers[i].CardNumber.Equals(indivPayee[1]))
+                        {
+                            index = i;
+                            break;
+                        }
+                    }
+                    if (index != -1) //error handle maybe but unncessary since we make assumption payee is always known.
+                    {
+                        customers[custID].payees.Add(new JAABS.Customer.Payee(customers[index], indivPayee[0]));
+                    }
+                }
+                custID++;
             }
 
             return customers;
@@ -170,8 +212,8 @@ namespace JAABS.Bank
                 temp.Credit.Cash = temp.Credit.Cash - amount;
                 return true;
             }
-            return false;
             UpdateServer();
+            return false;
         }
         public void depositCheque(JAABS.Bank.Cheque toDeposit, string cardNumber,string choice)
         {

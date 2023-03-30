@@ -12,9 +12,10 @@ internal class Program
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Hello World!\n");
 
+        /*
         Tester.Test();
         Console.ReadKey();
-        Console.Clear();
+        Console.Clear();*/
 
         JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
@@ -47,7 +48,7 @@ internal class Program
                 System.Threading.Thread.Sleep(50);
                 if (ATM.CardType == "Debit")
                 { 
-                    Console.Write("Enter 1 to deposit, 2 to withdraw, 3 transfer: ", ATM.CardNumber);
+                    Console.Write("Enter 1 to deposit, 2 to withdraw, 3 to transfer, 4 to pay payees: ", ATM.CardNumber);
                     string choice = Console.ReadLine();
                     if (choice == "1")
                     {
@@ -90,6 +91,37 @@ internal class Program
                         string amount = Console.ReadLine();
 
                         ATM.Withdraw(Convert.ToInt32(amount), accountChoice);
+                    }
+                    if (choice == "3")
+                    {
+                        Console.WriteLine("woof");
+                    }
+                    if (choice == "4")
+                    {
+                        int maxSize = -1;
+                        foreach (JAABS.Customer.Customer cust in ATM.MainBank.Customers)
+                        {
+                            if (cust.CardNumber.Equals(JAABS.Encryptioner.DecryptKey(ATM.CardNumber)))
+                            {
+                                maxSize = cust.payees.Count;
+                                Console.WriteLine("Payees List");
+                                int i = 0;
+                                foreach (JAABS.Customer.Payee payee in cust.payees)
+                                {
+                                    Console.WriteLine((i++) + ". " + payee.toString());
+                                }
+                                Console.Write("Enter index: ");
+                                choice = Console.ReadLine();
+                                int bad = 0;
+                                if (int.TryParse(choice, out bad) && int.Parse(choice) >= 0 && int.Parse(choice) <= maxSize - 1)
+                                {
+                                    int index = int.Parse(choice);
+                                    Console.Write("Enter amount: ");
+                                    choice = Console.ReadLine();
+                                    ATM.MainBank.payPayee(cust.payees[index].cust, int.Parse(choice));
+                                }
+                            }
+                        }
                     }
                 }
                 if (ATM.CardType == "Credit")
