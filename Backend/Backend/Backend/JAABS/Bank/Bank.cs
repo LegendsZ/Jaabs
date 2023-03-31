@@ -224,7 +224,7 @@ namespace JAABS.Bank
         {
             foreach (JAABS.Customer.Customer cust in Customers)
             {
-                if (cust.CardNumber.Equals(cardNumber))
+                if (cust.CardNumber.Equals(Encryptioner.DecryptKey(cardNumber)))
                 {
                     if (choice.Equals("savings"))
                     {

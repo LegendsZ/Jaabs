@@ -87,7 +87,6 @@ namespace JAABS.ATMMachine
                 total += money;
                 Console.WriteLine("Enter 1 to deposit more, 2 if done depositing");
                 key = Console.ReadLine();
-        
             }
             if (ActiveBank.requestDeposit(CardNumber, total, where) == false)
             {
@@ -221,6 +220,9 @@ namespace JAABS.ATMMachine
 
         public void LogOut()
         {
+            CardIn = false;
+            CardNumber = "";
+            CardType = "";
             LoggedIn = false;
         }
 

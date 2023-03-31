@@ -13,7 +13,6 @@ namespace JAABS.ATMMachine
             string money = System.IO.File.ReadAllText("MoneyReader.txt");
             Eject();
             return Convert.ToInt32(money);
-
         }
 
         public static void Eject()
