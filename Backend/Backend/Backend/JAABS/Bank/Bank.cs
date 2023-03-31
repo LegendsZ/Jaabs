@@ -55,8 +55,7 @@ namespace JAABS.Bank
                 temp.Blocked = 1;
                 return false;
             }
-
-
+            UpdateServer();
             return true;
         }
 

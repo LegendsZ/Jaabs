@@ -48,7 +48,7 @@ internal class Program
                 System.Threading.Thread.Sleep(50);
                 if (ATM.CardType == "Debit")
                 { 
-                    Console.Write("Enter 1 to deposit, 2 to withdraw, 3 to transfer, 4 to pay payees: ", ATM.CardNumber);
+                    Console.Write("Enter 1 to deposit, 2 to withdraw, 3 to pay payees: ", ATM.CardNumber);
                     string choice = Console.ReadLine();
                     if (choice == "1")
                     {
@@ -93,10 +93,6 @@ internal class Program
                         ATM.Withdraw(Convert.ToInt32(amount), accountChoice);
                     }
                     if (choice == "3")
-                    {
-                        Console.WriteLine("woof");
-                    }
-                    if (choice == "4")
                     {
                         int maxSize = -1;
                         foreach (JAABS.Customer.Customer cust in ATM.ActiveBank.Customers)
