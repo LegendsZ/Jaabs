@@ -20,7 +20,7 @@ namespace JAABS.ATMMachine
         public int FiftyDollars;
         public int HundredDollars;
         public JAABS.Bank.Bank[] Banks;
-        public JAABS.Bank.Bank MainBank;
+        public JAABS.Bank.Bank ActiveBank;
         public string CardType;
         public ATMMachine(string bankOwner, string machineNumber, JAABS.Bank.Bank mainbank)
         {
@@ -28,9 +28,17 @@ namespace JAABS.ATMMachine
             LoggedIn = false;
             BankOwner = bankOwner;
             MachineNumber= machineNumber;
-            MainBank = mainbank;
+            ActiveBank = mainbank;
+            InitializeSubBanks(mainbank);
             ReadMoney("Vault.txt");
             
+        }
+        public void InitializeSubBanks(JAABS.Bank.Bank mainbank)
+        {
+            Banks = new JAABS.Bank.Bank[3];
+            Banks[0] = mainbank;
+            Banks[1] = new JAABS.Bank.Bank("Bank 2", "Bank2CustomerData.txt", "Bank2HashData.txt");
+            Banks[2] = new JAABS.Bank.Bank("Bank 3", "Bank3CustomerData.txt", "Bank3HashData.txt");
         }
         public void ReadMoney(string filename)
         {
@@ -81,7 +89,7 @@ namespace JAABS.ATMMachine
                 key = Console.ReadLine();
         
             }
-            if (MainBank.requestDeposit(CardNumber, total, where) == false)
+            if (ActiveBank.requestDeposit(CardNumber, total, where) == false)
             {
                 Console.WriteLine("Suspicious amount deposited");
             }
@@ -94,6 +102,7 @@ namespace JAABS.ATMMachine
         public void LogIn(string pin)
         {
             string cardNumber = JAABS.ATMMachine.CardReader.Read();
+            Console.WriteLine("Card: {0}", cardNumber);
             pin = JAABS.Encryptioner.EncryptKey(pin);
             CardNumber = JAABS.Encryptioner.EncryptKey(cardNumber);
             if (cardNumber.Length != 16)
@@ -106,8 +115,20 @@ namespace JAABS.ATMMachine
                 CardType = "Debit";
                 Console.WriteLine("Card type: Debit");
             }
- 
-            int status = MainBank.VerifyLogin(CardNumber, pin);
+            switch (JAABS.Encryptioner.DecryptKey(Char.ToString(CardNumber[0])))
+            {
+                case "1":
+                    ActiveBank = Banks[0];
+                    break;
+                case "2":
+                    ActiveBank = Banks[1];
+                    break;
+                case "3":
+                    ActiveBank = Banks[2];
+                    break;
+            }
+            Console.WriteLine("Active Bank: {0}", JAABS.Encryptioner.DecryptKey(Char.ToString(pin[0])));
+            int status = ActiveBank.VerifyLogin(CardNumber, pin);
 
             if (status == 0)
             {
@@ -139,12 +160,12 @@ namespace JAABS.ATMMachine
             bool request = false;
             if (CardType == "Debit")
             {
-                request = MainBank.requestWithdraw(CardNumber, amount, type);
+                request = ActiveBank.requestWithdraw(CardNumber, amount, type);
 
             }
             else if (CardType == "Credit")
             {
-                request = MainBank.orderCash(CardNumber, amount);
+                request = ActiveBank.orderCash(CardNumber, amount);
             }
             if (request)
             {
@@ -215,7 +236,7 @@ namespace JAABS.ATMMachine
         {
             if (CardType.Equals("Debit"))
             {
-                MainBank.depositCheque(toDeposit, CardNumber, choice);
+                ActiveBank.depositCheque(toDeposit, CardNumber, choice);
                 return true;
             }
             return false;

@@ -26,6 +26,7 @@ namespace JAABS.Bank
             string hash = JAABS.Encryptioner.EncryptPin(JAABS.Encryptioner.DecryptKey(pin));
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
             JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            Console.WriteLine("Hi {0}", temp.Name);
             //"if (hash == "efgh") return true;"
             if (HashFinder(cardNumber) != hash)
             {

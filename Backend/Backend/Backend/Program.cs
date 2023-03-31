@@ -18,7 +18,7 @@ internal class Program
         Console.Clear();*/
 
         JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
-        Console.WriteLine("Bank Owner Name: {0}", ATM.MainBank.Name);
+        Console.WriteLine("Bank Owner Name: {0}", ATM.ActiveBank.Name);
         while(true)
         {
             Console.Clear();
@@ -99,7 +99,7 @@ internal class Program
                     if (choice == "4")
                     {
                         int maxSize = -1;
-                        foreach (JAABS.Customer.Customer cust in ATM.MainBank.Customers)
+                        foreach (JAABS.Customer.Customer cust in ATM.ActiveBank.Customers)
                         {
                             if (cust.CardNumber.Equals(JAABS.Encryptioner.DecryptKey(ATM.CardNumber)))
                             {
@@ -118,7 +118,7 @@ internal class Program
                                     int index = int.Parse(choice);
                                     Console.Write("Enter amount: ");
                                     choice = Console.ReadLine();
-                                    ATM.MainBank.payPayee(cust.payees[index].cust, int.Parse(choice));
+                                    ATM.ActiveBank.payPayee(cust.payees[index].cust, int.Parse(choice));
                                 }
                             }
                         }
