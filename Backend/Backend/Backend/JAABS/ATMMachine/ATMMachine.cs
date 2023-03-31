@@ -127,7 +127,6 @@ namespace JAABS.ATMMachine
                     ActiveBank = Banks[2];
                     break;
             }
-            Console.WriteLine("Active Bank: {0}", JAABS.Encryptioner.DecryptKey(Char.ToString(pin[0])));
             int status = ActiveBank.VerifyLogin(CardNumber, pin);
 
             if (status == 0)

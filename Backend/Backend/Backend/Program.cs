@@ -15,8 +15,8 @@ internal class Program
         /*
         Tester.Test();
         Console.ReadKey();
-        Console.Clear();*/
-
+        Console.Clear();
+        Console.WriteLine("All tests passed!")*/
         JAABS.ATMMachine.ATMMachine ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753",new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         Console.WriteLine("Bank Owner Name: {0}", ATM.ActiveBank.Name);
         while(true)
@@ -122,20 +122,16 @@ internal class Program
                 }
                 if (ATM.CardType == "Credit")
                 {
-                    Console.Write("Enter 1 to pay, 2 to withdraw money");
+                    Console.Write("Enter 1 to withdraw, 2 to withdraw money");
                     string choice = Console.ReadLine();
+
                     if (choice == "1")
-                    {
-                        Console.WriteLine("Meow");
-                    }
-                    else if (choice == "2")
                     {
                         Console.Write("Enter how much: ");
                         string amount = Console.ReadLine();
                         ATM.Withdraw(Convert.ToInt32(amount), null);
                     }
                 }
-
             }
         }
 

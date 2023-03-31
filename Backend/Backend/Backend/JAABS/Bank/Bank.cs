@@ -26,8 +26,7 @@ namespace JAABS.Bank
             string hash = JAABS.Encryptioner.EncryptPin(JAABS.Encryptioner.DecryptKey(pin));
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
             JAABS.Customer.Customer temp = customerFinder(cardNumber);
-            Console.WriteLine("Hi {0}", temp.Name);
-            //"if (hash == "efgh") return true;"
+            //Return: 0 for approved login, 1 for blocked account, 2 for wrong pin
             if (HashFinder(cardNumber) != hash)
             {
                 temp.Attempts += 1;
@@ -35,7 +34,11 @@ namespace JAABS.Bank
                 UpdateServer();
                 return 1;
             }
-            if (temp.Blocked == 1) return 2;
+            if (temp.Blocked == 1)
+            {
+                temp.Attempts = 0;
+                return 2;
+            };
             return 0;
         }
         //Blocks account if deposit is more than 10k (Not legal)
@@ -74,9 +77,9 @@ namespace JAABS.Bank
         }
         public JAABS.Customer.Customer[] CustomerReader(string customerFile,string payeeFile)
         {
-            //stores the lines of data in the file into elements of an array
+            //Stores the lines of data in the file into elements of an array
             string[] lines = File.ReadAllLines(customerFile);
-            //customer array with the size of the number of customers in the file
+            //Customer array with the size of the number of customers in the file
             JAABS.Customer.Customer[] customers = new JAABS.Customer.Customer[lines.Length];
             int count = 0;
 
@@ -85,18 +88,18 @@ namespace JAABS.Bank
             //iterates through each customer's data
             foreach (string line in lines)
             {
-                //seperate the data into an array
+                //Separate the data into an array
                 string[] token = line.Split(',');
 
-                //creates the customer's chequing account
+                //Creates the customer's chequing account
                 JAABS.Customer.Account chequing = new JAABS.Customer.Account(token[3], token[4], token[5], token[6], Convert.ToDouble(token[7]));
 
-                //creates the customer's saving account
+                //Creates the customer's saving account
                 JAABS.Customer.Account saving = new JAABS.Customer.Account(token[8], token[9], token[10], token[11], Convert.ToDouble(token[12]));
 
-                //creates the customer's credit card account
+                //Creates the customer's credit card account
                 JAABS.Customer.Account atm = new JAABS.Customer.Account(token[13], token[14], token[15], token[16], Convert.ToDouble(token[17]));
-                //adds the customer to the array
+                //Adds the customer to the array
                 customers[count] = new JAABS.Customer.Customer(token[0], Int32.Parse(token[1]), token[2], chequing, saving, atm, token[18], Int32.Parse(token[19]), Int32.Parse(token[20]));
                 count++;
             }
@@ -132,6 +135,7 @@ namespace JAABS.Bank
 
         public JAABS.Bank.Hash[] HashReader(string hashFile)
         {
+            //Access the server (textfile) of hashes and save them (for quick access)
             string[] lines = File.ReadAllLines(hashFile);
             JAABS.Bank.Hash[] hashes = new JAABS.Bank.Hash[lines.Length];
             int count = 0;
@@ -210,6 +214,7 @@ namespace JAABS.Bank
             if (temp.Credit.Cash - amount > -10000)
             {
                 temp.Credit.Cash = temp.Credit.Cash - amount;
+                UpdateServer();
                 return true;
             }
             UpdateServer();
@@ -235,6 +240,7 @@ namespace JAABS.Bank
         }
         public void UpdateServer()
         {
+            //Rewrites all data in the server (textfile)
             string[] CustomersData = new string[Customers.Length];
             JAABS.Customer.Customer temp;
             for (int i = 0; i < Customers.Length; i++)
