@@ -13,12 +13,12 @@ namespace ATMSimulationProject
 {
     public partial class TransferForm : Form
     {
-        private Account account;
-        public TransferForm(Account account)
+        private JAABS.ATMMachine.ATMMachine ATM;
+        public TransferForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
-            this.account = account;
-            lblBalance.Text = Convert.ToString(this.account.Balance);
+            this.ATM = ATM;
+            lblBalance.Text = Convert.ToString("");
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace ATMSimulationProject
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
+            /*
             decimal amount = Convert.ToDecimal(txtboxTransfer.Text);
 
             if (amount > account.Balance)
@@ -47,7 +48,7 @@ namespace ATMSimulationProject
                 // navigate to main screen
                 new MainInterface(account).Show();
                 this.Close();
-            }
+            }*/
         }
 
         private void grpboxTransfer_Enter(object sender, EventArgs e)

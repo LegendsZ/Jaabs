@@ -13,37 +13,38 @@ namespace ATMSimulationProject
 {
     public partial class MainInterface : Form
     {
-        private Account account;
-        public MainInterface(Account account)
+        public static MainInterface mainInterface;
+        private JAABS.ATMMachine.ATMMachine ATM;
+        public MainInterface(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
-            this.account = account;
-            lblBalance.Text = Convert.ToString(account.Balance);
+            this.ATM = ATM;
+            lblBalance.Text = Convert.ToString("");
+            mainInterface = this;
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-
-            new WithdrawForm(account).Show();
-            this.Close();
+            new WithdrawForm(ATM).Show();
+            this.Hide();
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            new DepositForm(account).Show();
-            this.Close();
+            new DepositForm(ATM).Show();
+            this.Hide();
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            new TransferForm(account).Show();
-            this.Close();
+            new TransferForm(ATM).Show();
+            this.Hide();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            new LoginWithPINForm().Show();
-            this.Close();
+            ATM.LogOut();
+            this.Hide();
         }
     }
 }

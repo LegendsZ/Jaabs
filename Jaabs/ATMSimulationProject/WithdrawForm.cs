@@ -13,49 +13,37 @@ namespace ATMSimulationProject
 {
     public partial class WithdrawForm : Form
     {
-        private Account account;
-        public WithdrawForm(Account account)
+        private JAABS.ATMMachine.ATMMachine ATM;
+        public WithdrawForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
-            this.account = account;
-            lblBalance.Text = Convert.ToString(this.account.Balance);
+            this.ATM = ATM;
+            lblBalance.Text = Convert.ToString("");
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-
-
-            decimal amount = Convert.ToDecimal(txtBoxWithdraw.Text);
-
-            if (amount > account.Balance)
+            if (cmbAccount.Text.Equals("Chequing") || cmbAccount.Text.Equals("Savings"))
             {
-                MessageBox.Show("You have insufficient funds to complete this transaction");
+                ATM.Withdraw(Convert.ToInt32(txtBoxWithdraw.Text), cmbAccount.Text);
             }
-            else
-            {
-                account.Balance -= amount;
-                if (MessageBox.Show("Would you like a receipt for this transaction?", "Receipts", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    // Do something here
-                    // this will generate a pdf that will be printed
-                }
-
-                // navigate to main screen
-                new MainInterface(account).Show();
-                this.Close();
-            }
-
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            new LoginWithPINForm().Show();
-            Close();
+            ATM.LogOut();
+            this.Close();
         }
 
         private void grpboxWithdraw_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            MainInterface.mainInterface.Show();
+            this.Hide();
         }
     }
 }

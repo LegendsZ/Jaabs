@@ -87,6 +87,7 @@
             this.btnWithdraw.TabIndex = 11;
             this.btnWithdraw.Text = "Withdraw Funds";
             this.btnWithdraw.UseVisualStyleBackColor = false;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnDeposit
             // 
@@ -123,6 +124,7 @@
             this.btnLogout.TabIndex = 14;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label2
             // 
@@ -151,6 +153,7 @@
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.lbltxtBalance);
             this.Name = "MainInterface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainInterface";
             this.ResumeLayout(false);
             this.PerformLayout();

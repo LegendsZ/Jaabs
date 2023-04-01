@@ -49,7 +49,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtboxPIN
             // 
@@ -110,6 +110,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MaximizeBox = false;
             this.Name = "LoginWithPINForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginWithPINForm";
             this.Load += new System.EventHandler(this.LoginWithPINForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

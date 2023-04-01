@@ -14,17 +14,17 @@ namespace ATMSimulationProject
     public partial class DepositForm : Form
     {
 
-        private Account account;
-        public DepositForm(Account account)
+        private JAABS.ATMMachine.ATMMachine ATM;
+        public DepositForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
-            this.account = account;
-            lblBalance.Text = Convert.ToString(this.account.Balance);
+            this.ATM = ATM;
+            lblBalance.Text = Convert.ToString("");
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-
+            /*
             decimal amount = Convert.ToDecimal(txtboxDeposit.Text);
             account.Balance += amount;
 
@@ -35,7 +35,7 @@ namespace ATMSimulationProject
 
             // navigate back to main screen            
             new MainInterface(account).Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
