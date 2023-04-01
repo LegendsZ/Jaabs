@@ -40,14 +40,15 @@ namespace ATMSimulationProject
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            new LoginWithPINForm().Show();
+            ATM.LogOut();
             this.Close();
         }
 
         private void DepositForm_Load(object sender, EventArgs e)
         {
 
-
+            MainInterface.mainInterface.Show();
+            this.Hide();
 
 
 

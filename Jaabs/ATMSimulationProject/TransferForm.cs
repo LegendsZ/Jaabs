@@ -23,8 +23,7 @@ namespace ATMSimulationProject
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            LoginWithPINForm loginForm = new LoginWithPINForm();
-            loginForm.Show();
+            ATM.LogOut();
             this.Close();
         }
 
@@ -49,6 +48,12 @@ namespace ATMSimulationProject
                 new MainInterface(account).Show();
                 this.Close();
             }*/
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            MainInterface.mainInterface.Show();
+            this.Hide();
         }
 
         private void grpboxTransfer_Enter(object sender, EventArgs e)
