@@ -44,6 +44,8 @@ namespace ATMSimulationProject
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ATM.LogOut();
+            WaitingScreen.waitingScreen.Show();
+            WaitingScreen.waitingScreen.WaitingScreen_Shown(null,null);
             this.Hide();
         }
     }

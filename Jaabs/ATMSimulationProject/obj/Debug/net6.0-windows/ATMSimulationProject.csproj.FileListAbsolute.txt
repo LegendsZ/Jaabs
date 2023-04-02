@@ -121,3 +121,5 @@ C:\Users\jaide\Documents\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windo
 C:\Users\jaide\Documents\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.pdb
 C:\Users\jaide\Documents\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.genruntimeconfig.cache
 C:\Users\jaide\Documents\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ref\ATMSimulationProject.dll
+C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.EndScreen.resources
+C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.WaitingScreen.resources

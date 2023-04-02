@@ -31,7 +31,6 @@
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.txtBoxWithdraw = new System.Windows.Forms.TextBox();
             this.lblWithdraw = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbAccount = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.btnWithdraw.TabIndex = 2;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = false;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // txtBoxWithdraw
             // 
@@ -69,18 +69,6 @@
             this.lblWithdraw.TabIndex = 0;
             this.lblWithdraw.Text = "Enter Amount to Withdraw";
             // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLogout.Location = new System.Drawing.Point(297, 12);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(125, 40);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            // 
             // btnGoBack
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
@@ -92,6 +80,7 @@
             this.btnGoBack.TabIndex = 11;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // cmbAccount
             // 
@@ -103,12 +92,6 @@
             this.cmbAccount.Name = "cmbAccount";
             this.cmbAccount.Size = new System.Drawing.Size(121, 23);
             this.cmbAccount.TabIndex = 12;
-            /*
-             * if(Creditcard)
-             * {
-             *      this.cmbAccount.Visible = false;
-             * }
-             */
             // 
             // label1
             // 
@@ -120,13 +103,6 @@
             this.label1.Size = new System.Drawing.Size(156, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "Choose Account";
-
-            /*
-             * if(Creditcard)
-             * {
-             *      this.lable1.Visible = false;
-             * }
-             */ 
             // 
             // WithdrawForm
             // 
@@ -141,7 +117,6 @@
             this.Controls.Add(this.lblWithdraw);
             this.Controls.Add(this.txtBoxWithdraw);
             this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.btnLogout);
             this.MinimizeBox = false;
             this.Name = "WithdrawForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -155,7 +130,6 @@
         private Button btnWithdraw;
         private TextBox txtBoxWithdraw;
         private Label lblWithdraw;
-        private Button btnLogout;
         private Button btnGoBack;
         private ComboBox cmbAccount;
         private Label label1;

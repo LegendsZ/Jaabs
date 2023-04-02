@@ -45,7 +45,7 @@ namespace JAABS.Bank
         public bool requestDeposit(string cardNumber, int amount, string where)
         {
             JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
-            if (where == "savings")
+            if (where == "Savings")
             {
                 temp.Savings.Cash += amount;
             }

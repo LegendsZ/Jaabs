@@ -16,25 +16,24 @@ namespace ATMSimulationProject
     {
         private int count = 0;
         JAABS.ATMMachine.ATMMachine ATM;
+        public LoginWithPINForm(JAABS.ATMMachine.ATMMachine ATM)
+        {
+            InitializeComponent();
+            this.ATM = ATM;
+        }
         public LoginWithPINForm()
         {
             InitializeComponent();
-            ATM = new JAABS.ATMMachine.ATMMachine("TMBank", "30321758753", new JAABS.Bank.Bank("TMBank", "CustomerData.txt", "HashData.txt"));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            ATM.CheckCard();
-            if (ATM.CardIn)
+            ATM.LogIn(txtboxPIN.Text);
+            if (ATM.LoggedIn)
             {
-                ATM.LogIn(txtboxPIN.Text);
-                if (ATM.LoggedIn)
-                {
-                    MainInterface mainInterface = new MainInterface(ATM);
-                    mainInterface.Show();
-                    Hide();
-                }
+                MainInterface mainInterface = new MainInterface(ATM);
+                mainInterface.Show();
+                Hide();
             }
 
 
@@ -49,7 +48,7 @@ namespace ATMSimulationProject
                             "User"
                             );*/
 
-            
+
         }
 
         private void lblAccountNumber_Click(object sender, EventArgs e)

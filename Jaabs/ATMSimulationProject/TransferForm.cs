@@ -14,6 +14,7 @@ namespace ATMSimulationProject
     public partial class TransferForm : Form
     {
         private JAABS.ATMMachine.ATMMachine ATM;
+        private List<JAABS.Customer.Payee> payees = new List<JAABS.Customer.Payee>();
         public TransferForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
@@ -29,36 +30,44 @@ namespace ATMSimulationProject
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            /*
-            decimal amount = Convert.ToDecimal(txtboxTransfer.Text);
-
-            if (amount > account.Balance)
+            int x;
+            if (!int.TryParse(txtboxTransfer.Text,out x))
             {
-                MessageBox.Show("You have insufficient funds to complete this transaction");
+                return;
             }
-            else
-            {
-                account.Balance -= amount;
-                if (MessageBox.Show("Would you like a receipt for this transaction?", "Receipts", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    // Do something here
-                    // this will generate a pdf that will be printed
-                }
-                // navigate to main screen
-                new MainInterface(account).Show();
-                this.Close();
-            }*/
+            ATM.ActiveBank.payPayee(payees[combobxRecipients.SelectedIndex].cust, int.Parse(txtboxTransfer.Text));
+            ATM.LogOut();
+            WaitingScreen.waitingScreen.Show();
+            WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
+            this.Close();
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             MainInterface.mainInterface.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void grpboxTransfer_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TransferForm_Load(object sender, EventArgs e)
+        {
+            int maxSize = -1;
+            foreach (JAABS.Customer.Customer cust in ATM.ActiveBank.Customers)
+            {
+                if (cust.CardNumber.Equals(JAABS.Encryptioner.DecryptKey(ATM.CardNumber)))
+                {
+                    maxSize = cust.payees.Count;
+                    foreach (JAABS.Customer.Payee payee in cust.payees)
+                    {
+                        payees.Add(payee);
+                        combobxRecipients.Items.Add(payee.toString());
+                    }
+                }
+            }
         }
     }
 }

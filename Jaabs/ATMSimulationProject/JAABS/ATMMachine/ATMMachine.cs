@@ -50,10 +50,6 @@ namespace JAABS.ATMMachine
             FiftyDollars = Convert.ToInt32(values[3]);
             HundredDollars = Convert.ToInt32(values[4]);
         }
-        public void GetOtherBanks(string filename)
-        {
-            Console.WriteLine("hi");
-        }
 
         public void DepositCash(string where)
         {

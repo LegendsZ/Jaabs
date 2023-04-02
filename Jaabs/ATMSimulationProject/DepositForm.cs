@@ -24,34 +24,49 @@ namespace ATMSimulationProject
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            /*
-            decimal amount = Convert.ToDecimal(txtboxDeposit.Text);
-            account.Balance += amount;
-
-            if (MessageBox.Show("Would you like a receipt for this transaction?", "Receipts", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (radioBtnCash.Checked)
             {
-                // Do something here
+                ATM.DepositCash(combobxRecipients.Text);
             }
-
-            // navigate back to main screen            
-            new MainInterface(account).Show();
-            this.Close();*/
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
+            else
+            {
+                JAABS.Bank.Cheque cheque = ATM.readCheque("cheque.txt");
+                ATM.DepositCheques(cheque, combobxRecipients.Text);
+            }
             ATM.LogOut();
+            WaitingScreen.waitingScreen.Show();
+            WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
             this.Close();
         }
 
-        private void DepositForm_Load(object sender, EventArgs e)
+        private void btnGoBack_Click(object sender, EventArgs e)
         {
-
             MainInterface.mainInterface.Show();
-            this.Hide();
+            this.Close();
+        }
 
+        private void radioBtnCash_Click(object sender, EventArgs e)
+        {
+            if (radioBtnCash.Checked == true)
+            {
+                radioBtnCheque.Checked = false;
+            }
+            else
+            {
+                radioBtnCheque.Checked = true;
+            }
+        }
 
-
+        private void radioBtnCheque_Click(object sender, EventArgs e)
+        {
+            if (radioBtnCheque.Checked == true)
+            {
+                radioBtnCash.Checked = false;
+            }
+            else
+            {
+                radioBtnCash.Checked = true;
+            }
         }
     }
 }

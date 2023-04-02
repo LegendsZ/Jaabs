@@ -60,14 +60,7 @@
             this.btnWithdraw.TabIndex = 11;
             this.btnWithdraw.Text = "Withdraw Funds";
             this.btnWithdraw.UseVisualStyleBackColor = false;
-
-            /*
-             * if(Creditcard)
-             * {
-             *      this.btnWithdraw.Visible = false;
-             * }
-             */
-
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnDeposit
             // 
@@ -80,12 +73,7 @@
             this.btnDeposit.TabIndex = 12;
             this.btnDeposit.Text = "Deposit Cash/Cheque";
             this.btnDeposit.UseVisualStyleBackColor = false;
-            /*
-             * if(Creditcard)
-             * {
-             *      this.btnDeposit.Visible = false;
-             * }
-             */
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnTransfer
             // 
@@ -98,6 +86,7 @@
             this.btnTransfer.TabIndex = 13;
             this.btnTransfer.Text = "Transfer Funds";
             this.btnTransfer.UseVisualStyleBackColor = false;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // btnLogout
             // 
@@ -110,6 +99,7 @@
             this.btnLogout.TabIndex = 14;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label2
             // 
