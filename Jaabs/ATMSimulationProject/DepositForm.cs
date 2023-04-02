@@ -19,7 +19,7 @@ namespace ATMSimulationProject
         {
             InitializeComponent();
             this.ATM = ATM;
-            lblBalance.Text = Convert.ToString("");
+            //lblBalance.Text = Convert.ToString("");
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)

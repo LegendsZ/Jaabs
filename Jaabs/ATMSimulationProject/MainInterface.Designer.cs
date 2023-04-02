@@ -28,148 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblBalance = new Label();
-            lbltxtBalance = new Label();
-            label1 = new Label();
-            btnWithdraw = new Button();
-            btnDeposit = new Button();
-            btnTransfer = new Button();
-            btnLogout = new Button();
-            label2 = new Label();
-            SuspendLayout();
-            // 
-            // lblBalance
-            // 
-            lblBalance.BackColor = Color.MidnightBlue;
-            lblBalance.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBalance.ForeColor = Color.FromArgb(137, 207, 240);
-            lblBalance.Location = new Point(12, 284);
-            lblBalance.Name = "lblBalance";
-            lblBalance.RightToLeft = RightToLeft.Yes;
-            lblBalance.Size = new Size(100, 25);
-            lblBalance.TabIndex = 9;
-            lblBalance.Text = "0";
-            lblBalance.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lbltxtBalance
-            // 
-            lbltxtBalance.AutoSize = true;
-            lbltxtBalance.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbltxtBalance.ForeColor = Color.FromArgb(137, 207, 240);
-            lbltxtBalance.Location = new Point(12, 253);
-            lbltxtBalance.Name = "lbltxtBalance";
-            lbltxtBalance.RightToLeft = RightToLeft.Yes;
-            lbltxtBalance.Size = new Size(88, 30);
-            lbltxtBalance.TabIndex = 8;
-            lbltxtBalance.Text = "Balance";
-            lbltxtBalance.TextAlign = ContentAlignment.MiddleCenter;
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnWithdraw = new System.Windows.Forms.Button();
+            this.btnDeposit = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CheckBalance = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.MidnightBlue;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(137, 207, 240);
-            label1.Location = new Point(144, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(119, 32);
-            label1.TabIndex = 10;
-            label1.Text = "Welcome";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.label1.Location = new System.Drawing.Point(144, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 32);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Welcome";
             // 
             // btnWithdraw
             // 
-            btnWithdraw.BackColor = Color.FromArgb(137, 207, 240);
-            btnWithdraw.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnWithdraw.ForeColor = Color.MediumBlue;
-            btnWithdraw.Location = new Point(95, 65);
-            btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(225, 50);
-            btnWithdraw.TabIndex = 11;
-            btnWithdraw.Text = "Withdraw Funds";
-            btnWithdraw.UseVisualStyleBackColor = false;
-            btnWithdraw.Click += btnWithdraw_Click;
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWithdraw.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnWithdraw.Location = new System.Drawing.Point(95, 65);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(225, 50);
+            this.btnWithdraw.TabIndex = 11;
+            this.btnWithdraw.Text = "Withdraw Funds";
+            this.btnWithdraw.UseVisualStyleBackColor = false;
+
+            /*
+             * if(Creditcard)
+             * {
+             *      this.btnWithdraw.Visible = false;
+             * }
+             */
+
             // 
             // btnDeposit
             // 
-            btnDeposit.BackColor = Color.FromArgb(137, 207, 240);
-            btnDeposit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDeposit.ForeColor = Color.MediumBlue;
-            btnDeposit.Location = new Point(95, 121);
-            btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(225, 50);
-            btnDeposit.TabIndex = 12;
-            btnDeposit.Text = "Deposit Cash/Cheque";
-            btnDeposit.UseVisualStyleBackColor = false;
-            btnDeposit.Click += btnDeposit_Click;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnDeposit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDeposit.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnDeposit.Location = new System.Drawing.Point(95, 233);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(225, 50);
+            this.btnDeposit.TabIndex = 12;
+            this.btnDeposit.Text = "Deposit Cash/Cheque";
+            this.btnDeposit.UseVisualStyleBackColor = false;
+            /*
+             * if(Creditcard)
+             * {
+             *      this.btnDeposit.Visible = false;
+             * }
+             */
             // 
             // btnTransfer
             // 
-            btnTransfer.BackColor = Color.FromArgb(137, 207, 240);
-            btnTransfer.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTransfer.ForeColor = Color.MediumBlue;
-            btnTransfer.Location = new Point(95, 177);
-            btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(225, 50);
-            btnTransfer.TabIndex = 13;
-            btnTransfer.Text = "Transfer Funds";
-            btnTransfer.UseVisualStyleBackColor = false;
-            btnTransfer.Click += btnTransfer_Click;
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransfer.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btnTransfer.Location = new System.Drawing.Point(95, 177);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(225, 50);
+            this.btnTransfer.TabIndex = 13;
+            this.btnTransfer.Text = "Transfer Funds";
+            this.btnTransfer.UseVisualStyleBackColor = false;
             // 
             // btnLogout
             // 
-            btnLogout.BackColor = Color.FromArgb(137, 207, 240);
-            btnLogout.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogout.ForeColor = Color.Crimson;
-            btnLogout.Location = new Point(297, 269);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(125, 40);
-            btnLogout.TabIndex = 14;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = false;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.Crimson;
+            this.btnLogout.Location = new System.Drawing.Point(322, 269);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 40);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.MidnightBlue;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(137, 207, 240);
-            label2.Location = new Point(93, 41);
-            label2.Name = "label2";
-            label2.Size = new Size(227, 21);
-            label2.TabIndex = 15;
-            label2.Text = "How may we help you today";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.label2.Location = new System.Drawing.Point(93, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(227, 21);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "How may we help you today";
+            // 
+            // CheckBalance
+            // 
+            this.CheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
+            this.CheckBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CheckBalance.ForeColor = System.Drawing.Color.MediumBlue;
+            this.CheckBalance.Location = new System.Drawing.Point(95, 121);
+            this.CheckBalance.Name = "CheckBalance";
+            this.CheckBalance.Size = new System.Drawing.Size(225, 50);
+            this.CheckBalance.TabIndex = 16;
+            this.CheckBalance.Text = "Check Balance";
+            this.CheckBalance.UseVisualStyleBackColor = false;
             // 
             // MainInterface
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MidnightBlue;
-            ClientSize = new Size(434, 321);
-            Controls.Add(label2);
-            Controls.Add(btnLogout);
-            Controls.Add(btnTransfer);
-            Controls.Add(btnDeposit);
-            Controls.Add(btnWithdraw);
-            Controls.Add(label1);
-            Controls.Add(lblBalance);
-            Controls.Add(lbltxtBalance);
-            Name = "MainInterface";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainInterface";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.Controls.Add(this.CheckBalance);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnTransfer);
+            this.Controls.Add(this.btnDeposit);
+            this.Controls.Add(this.btnWithdraw);
+            this.Controls.Add(this.label1);
+            this.Name = "MainInterface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MainInterface";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private Label lblBalance;
-        private Label lbltxtBalance;
         private Label label1;
         private Button btnWithdraw;
         private Button btnDeposit;
         private Button btnTransfer;
         private Button btnLogout;
         private Label label2;
+        private Button CheckBalance;
     }
 }

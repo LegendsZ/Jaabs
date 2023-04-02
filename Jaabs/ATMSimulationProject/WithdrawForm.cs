@@ -18,7 +18,7 @@ namespace ATMSimulationProject
         {
             InitializeComponent();
             this.ATM = ATM;
-            lblBalance.Text = Convert.ToString("");
+            //lblBalance.Text = Convert.ToString("");
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
