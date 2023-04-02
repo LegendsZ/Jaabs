@@ -61,7 +61,15 @@ namespace JAABS.Bank
             UpdateServer();
             return true;
         }
-
+        public String RequestBalance(string cardNumber, string choice)
+        {
+            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            if (choice == "Savings")
+            {
+                return String.Format("{0:0.00}", temp.Savings.Cash);
+            }
+            return String.Format("{0:0.00}", temp.Chequing.Cash);
+        }
         public bool payPayee(JAABS.Customer.Customer cust, int amount)
         {
             foreach (JAABS.Customer.Customer tcust in Customers)
@@ -177,9 +185,7 @@ namespace JAABS.Bank
 
         public bool requestWithdraw(string cardNumber, int amount, string type)
         {
-            Console.WriteLine("Card Number: {0}", cardNumber);
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
-            Console.WriteLine("Card Number: {0}", cardNumber);
             JAABS.Customer.Customer temp = customerFinder(cardNumber);
             if (temp == null)
             {

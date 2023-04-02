@@ -95,6 +95,10 @@ namespace JAABS.ATMMachine
             }
 
         }
+        public String CheckBalance(string choice)
+        {
+            return ActiveBank.RequestBalance(CardNumber, choice);
+        }
         public void LogIn(string pin)
         {
             string cardNumber = JAABS.ATMMachine.CardReader.Read();
