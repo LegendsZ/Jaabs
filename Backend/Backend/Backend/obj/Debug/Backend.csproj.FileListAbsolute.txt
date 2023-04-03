@@ -14,3 +14,11 @@ C:\Users\lalal\source\repos\Jaabs\Backend\Backend\Backend\obj\Debug\Backend.cspr
 C:\Users\lalal\source\repos\Jaabs\Backend\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 C:\Users\lalal\source\repos\Jaabs\Backend\Backend\Backend\obj\Debug\Backend.exe
 C:\Users\lalal\source\repos\Jaabs\Backend\Backend\Backend\obj\Debug\Backend.pdb
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\bin\Debug\Backend.exe.config
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\bin\Debug\Backend.exe
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\bin\Debug\Backend.pdb
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\obj\Debug\Backend.csproj.SuggestedBindingRedirects.cache
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\obj\Debug\Backend.exe
+C:\Users\Simon Lin\Source\Repos\CPS420\Backend\Backend\Backend\obj\Debug\Backend.pdb

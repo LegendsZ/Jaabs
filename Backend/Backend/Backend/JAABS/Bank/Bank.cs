@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+using System.IO;    
 //Default bank format
 namespace JAABS.Bank
 {
@@ -24,10 +24,9 @@ namespace JAABS.Bank
         public int VerifyLogin(string cardNumber, string pin)
         {
             string hash = JAABS.Encryptioner.EncryptPin(JAABS.Encryptioner.DecryptKey(pin));
-            cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
-            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
             //Return: 0 for approved login, 1 for blocked account, 2 for wrong pin
-            if (HashFinder(cardNumber) != hash)
+            if (HashFinder(temp.CardNumber) != hash)
             {
                 temp.Attempts += 1;
                 if (temp.Attempts >= 3) temp.Blocked = 1;
@@ -45,13 +44,18 @@ namespace JAABS.Bank
         public bool requestDeposit(string cardNumber, int amount, string where)
         {
             JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
-            if (where == "savings")
+            if (where.ToLower() == "savings")
             {
                 temp.Savings.Cash += amount;
             }
-            else
+            else if (where.ToLower() == "chequing")
             {
                 temp.Chequing.Cash += amount;
+            }
+            else
+            {
+                //MessageBox.Show("Invalid account name");
+                return false;
             }
             if (amount >= 10000)
             {
@@ -178,9 +182,8 @@ namespace JAABS.Bank
         public bool requestWithdraw(string cardNumber, int amount, string type)
         {
             Console.WriteLine("Card Number: {0}", cardNumber);
-            cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
-            Console.WriteLine("Card Number: {0}", cardNumber);
-            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            Console.WriteLine("Card Number: {0}", JAABS.Encryptioner.DecryptKey(cardNumber));
+            JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
             if (temp == null)
             {
                 Console.WriteLine("Wow");
@@ -226,13 +229,17 @@ namespace JAABS.Bank
             {
                 if (cust.CardNumber.Equals(Encryptioner.DecryptKey(cardNumber)))
                 {
-                    if (choice.Equals("savings"))
+                    if (choice.ToLower().Equals("savings"))
                     {
                         cust.Savings.Cash += toDeposit.amount;
                     }
-                    else //we know it'll be one of the two
+                    else if (choice.ToLower().Equals("chequing"))
                     {
                         cust.Chequing.Cash += toDeposit.amount;
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Invalid account name");
                     }
                 }
             }
