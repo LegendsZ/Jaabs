@@ -16,5 +16,14 @@ namespace ATMSimulationProject
         {
             InitializeComponent();
         }
+
+        private void EndScreen_Shown(object sender, EventArgs e)
+        {
+            this.Refresh();
+            System.Threading.Thread.Sleep(3000);
+            this.Close();
+            WaitingScreen.waitingScreen.Show();
+            WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
+        }
     }
 }

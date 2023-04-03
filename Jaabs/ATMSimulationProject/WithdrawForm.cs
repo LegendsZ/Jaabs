@@ -26,9 +26,7 @@ namespace ATMSimulationProject
             if (cmbAccount.Text.Equals("Chequing") || cmbAccount.Text.Equals("Savings"))
             {
                 ATM.Withdraw(Convert.ToInt32(txtBoxWithdraw.Text), cmbAccount.Text);
-                ATM.LogOut();
-                WaitingScreen.waitingScreen.Show();
-                WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
+                (new EndScreen()).Show();
                 this.Close();
             }
         }

@@ -34,10 +34,6 @@ namespace ATMSimulationProject
             new DepositForm(ATM).Show();
             this.Hide();
         }
-        private void btnCheck_Balance(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             new TransferForm(ATM).Show();
@@ -47,8 +43,14 @@ namespace ATMSimulationProject
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ATM.LogOut();
-            WaitingScreen.waitingScreen.Show();
-            WaitingScreen.waitingScreen.WaitingScreen_Shown(null,null);
+            ATM.EjectCard();
+            (new EndScreen()).Show();
+            this.Hide();
+        }
+
+        private void CheckBalance_Click(object sender, EventArgs e)
+        {
+            new CheckBalance(ATM).Show();
             this.Hide();
         }
     }

@@ -138,6 +138,7 @@
             this.Controls.Add(this.combobxRecipients);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblRecipientAccount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "DepositForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

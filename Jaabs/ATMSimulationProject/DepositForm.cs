@@ -34,8 +34,8 @@ namespace ATMSimulationProject
                 ATM.DepositCheques(cheque, combobxRecipients.Text);
             }
             ATM.LogOut();
-            WaitingScreen.waitingScreen.Show();
-            WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
+            ATM.EjectCard();
+            (new EndScreen()).Show();
             this.Close();
         }
 

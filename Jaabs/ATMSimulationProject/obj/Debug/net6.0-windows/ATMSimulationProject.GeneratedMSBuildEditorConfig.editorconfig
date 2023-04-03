@@ -14,4 +14,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ATMSimulationProject
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Simon Lin\Source\Repos\CPS420\Jaabs\ATMSimulationProject\
+=======
+build_property.ProjectDir = C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\
+>>>>>>> 63fcc1d9c905a361859b059657d25d13f940b856

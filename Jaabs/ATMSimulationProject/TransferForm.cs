@@ -37,8 +37,8 @@ namespace ATMSimulationProject
             }
             ATM.ActiveBank.payPayee(payees[combobxRecipients.SelectedIndex].cust, int.Parse(txtboxTransfer.Text));
             ATM.LogOut();
-            WaitingScreen.waitingScreen.Show();
-            WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
+            ATM.EjectCard();
+            (new EndScreen()).Show();
             this.Close();
         }
 

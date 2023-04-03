@@ -141,6 +141,8 @@
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.lblTransfer);
             this.Controls.Add(this.btnLogout);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "TransferForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transfer";

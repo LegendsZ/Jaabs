@@ -108,6 +108,7 @@
             this.Controls.Add(this.txtboxPIN);
             this.Controls.Add(this.lblPIN);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "LoginWithPINForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
