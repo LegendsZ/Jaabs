@@ -51,9 +51,9 @@
             // 
             // txtBoxWithdraw
             // 
-            this.txtBoxWithdraw.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtBoxWithdraw.BackColor = System.Drawing.Color.White;
             this.txtBoxWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxWithdraw.Location = new System.Drawing.Point(104, 165);
+            this.txtBoxWithdraw.Location = new System.Drawing.Point(68, 162);
             this.txtBoxWithdraw.Name = "txtBoxWithdraw";
             this.txtBoxWithdraw.Size = new System.Drawing.Size(169, 33);
             this.txtBoxWithdraw.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.lblWithdraw.AutoSize = true;
             this.lblWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWithdraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
-            this.lblWithdraw.Location = new System.Drawing.Point(64, 137);
+            this.lblWithdraw.Location = new System.Drawing.Point(28, 134);
             this.lblWithdraw.Name = "lblWithdraw";
             this.lblWithdraw.Size = new System.Drawing.Size(253, 25);
             this.lblWithdraw.TabIndex = 0;
@@ -84,13 +84,15 @@
             // 
             // cmbAccount
             // 
+            this.cmbAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAccount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbAccount.FormattingEnabled = true;
             this.cmbAccount.Items.AddRange(new object[] {
             "Savings",
             "Chequing"});
-            this.cmbAccount.Location = new System.Drawing.Point(128, 91);
+            this.cmbAccount.Location = new System.Drawing.Point(92, 70);
             this.cmbAccount.Name = "cmbAccount";
-            this.cmbAccount.Size = new System.Drawing.Size(121, 23);
+            this.cmbAccount.Size = new System.Drawing.Size(121, 33);
             this.cmbAccount.TabIndex = 12;
             // 
             // label1
@@ -98,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(104, 63);
+            this.label1.Location = new System.Drawing.Point(75, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 25);
             this.label1.TabIndex = 13;
@@ -117,7 +119,8 @@
             this.Controls.Add(this.lblWithdraw);
             this.Controls.Add(this.txtBoxWithdraw);
             this.Controls.Add(this.btnWithdraw);
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "WithdrawForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WithdrawForm";

@@ -43,7 +43,7 @@
             this.label1.BackColor = System.Drawing.Color.MidnightBlue;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(144, 9);
+            this.label1.Location = new System.Drawing.Point(96, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 32);
             this.label1.TabIndex = 10;
@@ -54,7 +54,7 @@
             this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
             this.btnWithdraw.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnWithdraw.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnWithdraw.Location = new System.Drawing.Point(95, 65);
+            this.btnWithdraw.Location = new System.Drawing.Point(47, 65);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(225, 50);
             this.btnWithdraw.TabIndex = 11;
@@ -67,7 +67,7 @@
             this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
             this.btnDeposit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeposit.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnDeposit.Location = new System.Drawing.Point(95, 233);
+            this.btnDeposit.Location = new System.Drawing.Point(47, 233);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(225, 50);
             this.btnDeposit.TabIndex = 12;
@@ -80,7 +80,7 @@
             this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
             this.btnTransfer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransfer.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnTransfer.Location = new System.Drawing.Point(95, 177);
+            this.btnTransfer.Location = new System.Drawing.Point(47, 177);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(225, 50);
             this.btnTransfer.TabIndex = 13;
@@ -107,7 +107,7 @@
             this.label2.BackColor = System.Drawing.Color.MidnightBlue;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
-            this.label2.Location = new System.Drawing.Point(93, 41);
+            this.label2.Location = new System.Drawing.Point(45, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(227, 21);
             this.label2.TabIndex = 15;
@@ -118,12 +118,13 @@
             this.CheckBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(207)))), ((int)(((byte)(240)))));
             this.CheckBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CheckBalance.ForeColor = System.Drawing.Color.MediumBlue;
-            this.CheckBalance.Location = new System.Drawing.Point(95, 121);
+            this.CheckBalance.Location = new System.Drawing.Point(47, 121);
             this.CheckBalance.Name = "CheckBalance";
             this.CheckBalance.Size = new System.Drawing.Size(225, 50);
             this.CheckBalance.TabIndex = 16;
             this.CheckBalance.Text = "Check Balance";
             this.CheckBalance.UseVisualStyleBackColor = false;
+            this.CheckBalance.Click += new System.EventHandler(this.CheckBalance_Click);
             // 
             // MainInterface
             // 
@@ -138,6 +139,8 @@
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "MainInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainInterface";
