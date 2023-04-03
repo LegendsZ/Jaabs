@@ -23,6 +23,7 @@ namespace JAABS.ATMMachine
         public JAABS.Bank.Bank[] Banks;
         public JAABS.Bank.Bank ActiveBank;
         public string CardType;
+        public double REFERENCE;
         public ATMMachine(string bankOwner, string machineNumber, JAABS.Bank.Bank mainbank)
         {
             CardIn = false;
@@ -33,6 +34,7 @@ namespace JAABS.ATMMachine
             InitializeSubBanks(mainbank);
             ReadMoney("Vault.txt");
             ATM = this;
+            REFERENCE = 10000000;
         }
         public void InitializeSubBanks(JAABS.Bank.Bank mainbank)
         {
@@ -51,7 +53,7 @@ namespace JAABS.ATMMachine
             HundredDollars = Convert.ToInt32(values[4]);
         }
 
-        public void DepositCash(string where)
+        public void DepositCash(string type)
         {
             string key = "1";
             int money;
@@ -85,14 +87,21 @@ namespace JAABS.ATMMachine
                 Console.WriteLine("Enter 1 to deposit more, 2 if done depositing");
                 key = Console.ReadLine();
             }
-            if (ActiveBank.requestDeposit(CardNumber, total, where) == false)
+            int cost = total;
+            if (ActiveBank.requestDeposit(CardNumber, total, type) == false)
             {
                 Console.WriteLine("Suspicious amount deposited");
+                //Should pop an Account Blocked message + Call 470-0123-123 To Resolve Issues
             }
             else
             {
                 Console.WriteLine("Deposit successful");
+                JAABS.Customer.Receipt receipt = new JAABS.Customer.Receipt(BankOwner, "DEPOSIT", type, ActiveBank.RequestBalance(CardNumber, type), CardNumber, MachineNumber, string.Format("{0}", REFERENCE++), string.Format("{0:0.00}", cost), ActiveBank.Name, CardType);
+                receipt.Print();
+                LogOut();
+                EjectCard();
             }
+
 
         }
         public String CheckBalance(string choice)
@@ -166,6 +175,7 @@ namespace JAABS.ATMMachine
             {
                 request = ActiveBank.orderCash(CardNumber, amount);
             }
+            int cost = amount;
             if (request)
             {
                 while (amount > 0)
@@ -196,7 +206,11 @@ namespace JAABS.ATMMachine
                         amount -= 5;
                     }
                 }
-                Console.WriteLine("Withdraw Complete");
+                JAABS.Customer.Receipt receipt = new JAABS.Customer.Receipt(BankOwner, "WITHDRAW", type, ActiveBank.RequestBalance(CardNumber, type), CardNumber, MachineNumber, string.Format("{0}", REFERENCE++), string.Format("{0:0.00}", cost), ActiveBank.Name, CardType);
+                receipt.Print();
+                UpdateVault();
+                LogOut();
+                EjectCard();
             }
             else if (CardType == "Credit")
             {
@@ -227,11 +241,6 @@ namespace JAABS.ATMMachine
             LoggedIn = false;
         }
 
-        public bool DepositCash(int toDeposit)
-        {
-
-            return false;
-        }
 
         //make a cheque class?
         public bool DepositCheques(JAABS.Bank.Cheque toDeposit, string choice)
@@ -268,8 +277,11 @@ namespace JAABS.ATMMachine
             return new JAABS.Bank.Cheque(lines[0], lines[1], lines[2], lines[3], lines[4],lines[5], int.Parse(lines[6]));
         }
 
-        public void SaveTransactions()
+        public void UpdateVault()
         {
+
+            string VaultMoney = String.Format("{0}\n{1}\n{2}\n{3}\n{4}", FiveDollars, TenDollars, TwentyDollars, FiftyDollars, HundredDollars);
+            File.WriteAllText("Vault.txt", VaultMoney);
 
         }
 

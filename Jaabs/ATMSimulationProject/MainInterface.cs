@@ -34,7 +34,10 @@ namespace ATMSimulationProject
             new DepositForm(ATM).Show();
             this.Hide();
         }
-
+        private void btnCheck_Balance(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             new TransferForm(ATM).Show();

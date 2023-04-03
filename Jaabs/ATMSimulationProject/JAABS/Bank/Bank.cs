@@ -63,7 +63,7 @@ namespace JAABS.Bank
         }
         public String RequestBalance(string cardNumber, string choice)
         {
-            JAABS.Customer.Customer temp = customerFinder(cardNumber);
+            JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
             if (choice == "Savings")
             {
                 return String.Format("{0:0.00}", temp.Savings.Cash);
@@ -228,9 +228,10 @@ namespace JAABS.Bank
         }
         public void depositCheque(JAABS.Bank.Cheque toDeposit, string cardNumber,string choice)
         {
+            cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
             foreach (JAABS.Customer.Customer cust in Customers)
             {
-                if (cust.CardNumber.Equals(Encryptioner.DecryptKey(cardNumber)))
+                if (cust.CardNumber.Equals(cardNumber))
                 {
                     if (choice.Equals("savings"))
                     {

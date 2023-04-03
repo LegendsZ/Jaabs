@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WINDOWS\\Documents\\GitHub\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj": {}
+    "C:\\Users\\lalal\\source\\repos\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WINDOWS\\Documents\\GitHub\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj": {
+    "C:\\Users\\lalal\\source\\repos\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WINDOWS\\Documents\\GitHub\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj",
+        "projectUniqueName": "C:\\Users\\lalal\\source\\repos\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj",
         "projectName": "Jaabs",
-        "projectPath": "C:\\Users\\WINDOWS\\Documents\\GitHub\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj",
-        "packagesPath": "C:\\Users\\WINDOWS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WINDOWS\\Documents\\GitHub\\Jaabs\\Jaabs\\Jaabs\\obj\\",
+        "projectPath": "C:\\Users\\lalal\\source\\repos\\Jaabs\\Jaabs\\Jaabs\\Jaabs.csproj",
+        "packagesPath": "C:\\Users\\lalal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lalal\\source\\repos\\Jaabs\\Jaabs\\Jaabs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\WINDOWS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lalal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,0 +1,12 @@
+	ATM SERVICES PROVIDED BY TMBANK	
+
+MACHINE ID                   30321758753
+CARD NUMBER             ************3864
+
+REFERENCE ID                    10000000
+Debit                            Savings
+WITHDRAW                         1000.00
+BALANCE                        113402.00
+
+
+	 Thank you for banking with TMBANK	
