@@ -17,9 +17,9 @@ To use this program, you need to have the following software installed on your m
 4. Run the project by pressing <strong>`F5`</strong>.
 
 <h2><strong>Usage</strong></h2>
-The following user interface should be on your screen:
+Once running, the following user interface should be on your screen:
 
-<img src="https://user-images.githubusercontent.com/88695972/230731922-e5227209-80a2-4851-928e-fba988456763.png" alt="image" style="width:400px;"/>
+<img src="https://user-images.githubusercontent.com/88695972/230731922-e5227209-80a2-4851-928e-fba988456763.png" alt="image" style="width:500px;"/>
 
 
 
