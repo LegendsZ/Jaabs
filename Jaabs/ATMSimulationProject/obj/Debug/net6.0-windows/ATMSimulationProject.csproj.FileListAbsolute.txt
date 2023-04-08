@@ -151,3 +151,6 @@ C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-wi
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.genruntimeconfig.cache
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ref\ATMSimulationProject.dll
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CheckBalance.resources
+C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CheckBalance.resources
+C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.EndScreen.resources
+C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.WaitingScreen.resources

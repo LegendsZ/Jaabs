@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Recipt class
 namespace JAABS.Customer
 {
     public class Receipt
     {
+
+        //Recipt variables
         string BankOwner;
         string TransactionType;
         string AccountType;
@@ -19,6 +21,7 @@ namespace JAABS.Customer
         string ActiveBank;
         string CardType;
 
+        //Intialize recipt object
         public Receipt(string bankOwner, string transactionType, string accountType, string balance, string cardNumber, string machineID, string referenceNumber, string cost, string activeBank, string cardType)
         {
             BankOwner = bankOwner;
@@ -33,10 +36,13 @@ namespace JAABS.Customer
             CardType = cardType;
 
         }
+
+        //Print recipt
         public void Print()
         {
             string censored = "";
             CardNumber = JAABS.Encryptioner.DecryptKey(CardNumber);
+            //Censor card number
             for (int i = 0; i < CardNumber.Length; i++)
             {
                 if (i < CardNumber.Length - 4)
@@ -48,6 +54,8 @@ namespace JAABS.Customer
                     censored += CardNumber[i];
                 }
             }
+
+            //Print all Services provided during session
             System.IO.File.WriteAllText("PrintedReceipt.txt", "");
             string receipt =
                 "\tATM SERVICES PROVIDED BY " + BankOwner.ToUpper() + "\t" +

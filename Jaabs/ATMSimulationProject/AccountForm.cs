@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Interface
+
 namespace ATMSimulationProject
 {
     public partial class AccountForm : Form
@@ -29,6 +31,7 @@ namespace ATMSimulationProject
             // read csv file to show accounts
         }
 
+        //Withdraw functionallity
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             decimal amount = Convert.ToDecimal(txtBoxWithdraw.Text);
@@ -53,6 +56,7 @@ namespace ATMSimulationProject
 
         }
 
+        //Deposit functionality
         private void btnDeposit_Click(object sender, EventArgs e)
         {
             currentAccount.Balance += Convert.ToDecimal(txtboxDeposit.Text);
@@ -60,21 +64,24 @@ namespace ATMSimulationProject
             lblBalance.Text = currentAccount.Balance.ToString();
             if (MessageBox.Show("Would you like a receipt for this transaction?", "Receipts", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                // Do something here
+                
             }
         }
 
+        //Transfer functionality
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Would you like a receipt for this transaction?", "Receipts", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                // Do something here
+                
             }
 
         }
 
+        //Logout functionality
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //return to precious state
             this.Close();
             LoginWithPINForm loginWithPINForm = new LoginWithPINForm();
             loginWithPINForm.Show();

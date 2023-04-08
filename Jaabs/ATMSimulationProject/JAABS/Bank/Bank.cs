@@ -13,6 +13,8 @@ namespace JAABS.Bank
         public JAABS.Customer.Customer[] Customers { get; set; }
         public JAABS.Bank.Hash[] Hashes { get; set; }
         public string CustomerServer;
+
+        //Initalize bank object
         public Bank(string name, string customersFile, string hashFile)
         {
             Name = name;
@@ -21,8 +23,10 @@ namespace JAABS.Bank
             Hashes = HashReader(hashFile);
         }
 
+        //Verify login method
         public int VerifyLogin(string cardNumber, string pin)
         {
+            //Get has and card number
             string hash = JAABS.Encryptioner.EncryptPin(JAABS.Encryptioner.DecryptKey(pin));
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
             JAABS.Customer.Customer temp = customerFinder(cardNumber);
@@ -61,19 +65,25 @@ namespace JAABS.Bank
             UpdateServer();
             return true;
         }
+
+        //Method request balance
         public String RequestBalance(string cardNumber, string choice)
         {
             JAABS.Customer.Customer temp = customerFinder(JAABS.Encryptioner.DecryptKey(cardNumber));
+            //Savings chosen
             if (choice == "Savings")
             {
                 return String.Format("{0:0.00}", temp.Savings.Cash);
             }
             return String.Format("{0:0.00}", temp.Chequing.Cash);
         }
+
+        //Pay payee method
         public bool payPayee(JAABS.Customer.Customer cust, int amount)
         {
             foreach (JAABS.Customer.Customer tcust in Customers)
             {
+                //update payee information
                 if (tcust.CardNumber.Equals(cust.CardNumber))
                 {
                     tcust.Chequing.Cash += amount;
@@ -170,6 +180,7 @@ namespace JAABS.Bank
             return null;
         }
 
+        //find customer
         public JAABS.Customer.Customer customerFinder(string cardNumber)
         {
             for (int i = 0; i < Customers.Length; i++)
@@ -183,6 +194,7 @@ namespace JAABS.Bank
             return null;
         }
 
+        //Withdraw method
         public bool requestWithdraw(string cardNumber, int amount, string type)
         {
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
@@ -191,8 +203,10 @@ namespace JAABS.Bank
             {
                 Console.WriteLine("Wow");
             }
+            //Check type of account
             if (type == "Chequing")
             {
+                //Withdraw valid
                 if (temp.Chequing.Cash > amount)
                 {
                     temp.Chequing.Cash = temp.Chequing.Cash - amount;
@@ -202,6 +216,7 @@ namespace JAABS.Bank
             }
             if (type == "Savings")
             {
+                //withdraw valid
                 if (temp.Savings.Cash > amount)
                 {
                     temp.Savings.Cash = temp.Savings.Cash - amount;
@@ -213,6 +228,7 @@ namespace JAABS.Bank
             return false;
         }
 
+        //Order cash
         public bool orderCash(string cardNumber, int amount)
         {
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
@@ -226,9 +242,12 @@ namespace JAABS.Bank
             UpdateServer();
             return false;
         }
+
+        //Deposit cheque
         public void depositCheque(JAABS.Bank.Cheque toDeposit, string cardNumber,string choice)
         {
             cardNumber = JAABS.Encryptioner.DecryptKey(cardNumber);
+            //Update acccount for specific customer
             foreach (JAABS.Customer.Customer cust in Customers)
             {
                 if (cust.CardNumber.Equals(cardNumber))
@@ -245,6 +264,8 @@ namespace JAABS.Bank
             }
             UpdateServer();
         }
+
+        //Update bank server
         public void UpdateServer()
         {
             //Rewrites all data in the server (textfile)

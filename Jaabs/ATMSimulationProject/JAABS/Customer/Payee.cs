@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Payee class
 namespace JAABS.Customer
 {
     public class Payee
     {
         public JAABS.Customer.Customer cust;
         public string name;
+
+        //Initalize payee object
         public Payee(Customer cust, string name)
         {
             this.cust = cust;
@@ -17,6 +19,7 @@ namespace JAABS.Customer
         }
 
 
+        //Return encrypted card number
         public string toString()
         {
             string censoredCardNumber = "";

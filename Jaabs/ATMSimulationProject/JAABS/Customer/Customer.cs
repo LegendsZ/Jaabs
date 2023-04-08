@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Customer class
 namespace JAABS.Customer
 {
     public class Customer
     {
+        //Customer variables
         public string Name { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
@@ -20,6 +21,7 @@ namespace JAABS.Customer
         public int Blocked { get; set; }
         public int Attempts { get; set; }
 
+        //Return total cash from both accounts
         public double TotalCash()
         {
             double totalCash = 0;
@@ -28,6 +30,7 @@ namespace JAABS.Customer
             return totalCash;
         }
 
+        //Initialize customer object
         public Customer(string name, int age, string address, Account chequing, Account savings, Account credit, string cardNumber, int status, int attempts)
         {
             Name = name;

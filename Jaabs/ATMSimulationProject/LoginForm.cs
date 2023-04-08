@@ -1,18 +1,22 @@
 using ATMSimulationProject.models;
-
+//Create account
 namespace ATMSimulationProject
 {
     public partial class LoginForm : Form
 
     {
         public int count = 0;
+
+        //Constructor
         public LoginForm()
         {
             InitializeComponent();
         }
 
+        //Login button method
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //Not invalid number of atempts
             if (count < 3)
             {
                 string accountNumber = txtboxAccountNumber.Text;
@@ -58,6 +62,7 @@ namespace ATMSimulationProject
             }
         }
 
+        //Create Account button method
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             // generate random account number

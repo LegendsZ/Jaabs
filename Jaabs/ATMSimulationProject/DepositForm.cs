@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Deposit Functionality
+
 namespace ATMSimulationProject
 {
     public partial class DepositForm : Form
     {
 
         private JAABS.ATMMachine.ATMMachine ATM;
+
+        //Call deposit form
         public DepositForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
@@ -22,12 +26,15 @@ namespace ATMSimulationProject
             //lblBalance.Text = Convert.ToString("");
         }
 
+        //Functionality for deposit button
         private void btnDeposit_Click(object sender, EventArgs e)
         {
+            //Cash chosen so deposit cash
             if (radioBtnCash.Checked)
             {
                 ATM.DepositCash(combobxRecipients.Text);
             }
+            //Cheque chosen so read cheque and deposit cheque
             else
             {
                 JAABS.Bank.Cheque cheque = ATM.readCheque("cheque.txt");
@@ -39,14 +46,17 @@ namespace ATMSimulationProject
             this.Close();
         }
 
+        //Go back function button
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             MainInterface.mainInterface.Show();
             this.Close();
         }
 
+        //Cash is chosen
         private void radioBtnCash_Click(object sender, EventArgs e)
         {
+            //Set cash as true and set cheque as false
             if (radioBtnCash.Checked == true)
             {
                 radioBtnCheque.Checked = false;
@@ -57,8 +67,10 @@ namespace ATMSimulationProject
             }
         }
 
+        //Cheque is chosen
         private void radioBtnCheque_Click(object sender, EventArgs e)
         {
+            //Set cheque as true and set cash as false
             if (radioBtnCheque.Checked == true)
             {
                 radioBtnCash.Checked = false;

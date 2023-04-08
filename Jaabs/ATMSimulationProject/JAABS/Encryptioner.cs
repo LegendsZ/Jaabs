@@ -10,6 +10,7 @@ namespace JAABS
     {
         //Standard Caesar Encryption
 
+        //Encrypt key
         public static string EncryptKey(string key)
         {
             for (int i = 0; i < key.Length; i++)
@@ -18,6 +19,8 @@ namespace JAABS
             }
             return key;
         }
+
+        //Decrypt key
         public static string DecryptKey(string key)
         {
             for (int i = 0; i < key.Length; i++)
@@ -27,6 +30,7 @@ namespace JAABS
             return key;
         }
 
+        //Encrypt pin
         public static string EncryptPin(string pin)
         {
             for (int i = 0; i < pin.Length; i++)

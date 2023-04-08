@@ -10,24 +10,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Login form fucntionality
+
 namespace ATMSimulationProject
 {
     public partial class LoginWithPINForm : Form
     {
+        //ATM object
         private int count = 0;
         JAABS.ATMMachine.ATMMachine ATM;
+
+        //Intilaize component
         public LoginWithPINForm(JAABS.ATMMachine.ATMMachine ATM)
         {
             InitializeComponent();
             this.ATM = ATM;
         }
+
+        //Constructor
         public LoginWithPINForm()
         {
             InitializeComponent();
         }
 
+        //Login button method
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //When logged in call main interface
             ATM.LogIn(txtboxPIN.Text);
             if (ATM.LoggedIn)
             {
