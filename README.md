@@ -32,6 +32,7 @@ Ex. PIN: 1234
 ```
 
 Now you have logged in! You will be redirected to the main interface:
+
 <img src="https://user-images.githubusercontent.com/88695972/230736800-19cf78aa-8d20-4e5c-80b3-249a3ad99186.png" alt="image" style="width:500px;"/>
 
 
