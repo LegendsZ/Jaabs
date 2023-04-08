@@ -1,6 +1,6 @@
 <h1><strong>Just an ATM Banking System</strong></h1>
 
-<h2><strong>Automated Banking System</strong></h2>
+<h2><strong>ATM Banking System</strong></h2>
 The JAABS is a C# developed software that simulates an ATM machine, allowing new and existing bank customers to perform various transactions such as depositing cash,   checking their balances across multiple accounts, transfering funds between accounts, and is also equipped with a secure encryption method to secure and protect our customer data.
 
 <h2><strong>Prerequisites</strong></h2>
