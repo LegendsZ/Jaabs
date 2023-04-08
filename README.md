@@ -10,7 +10,7 @@ To use this program, you need to have the following software installed on your m
 * .NET Framework
 
 <h2><strong>Running the Simulation</strong></h2>
-1. Open Microsoft Visual Studio.
-2. Open the ATMSimulationProject.sln file.
-3. Build the project by pressing Ctrl+Shift+B.
-4. Run the project by pressing F5.
+1.Open Microsoft Visual Studio.
+2.Open the ATMSimulationProject.sln file.
+3.Build the project by pressing Ctrl+Shift+B.
+4.Run the project by pressing F5.
