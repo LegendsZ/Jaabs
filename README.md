@@ -11,7 +11,7 @@ To use this program, you need to have the following software installed on your m
 
 <h2><strong>Running the Simulation</strong></h2>
 
-1. Open <strong>Microsoft Visual Studio<strong>.
-2. Open the <strong>ATMSimulationProject.sln<strong> file.
-3. Build the project by pressing <strong>Ctrl+Shift+B<strong>.
-4. Run the project by pressing <strong>F5<strong>.
+1. Open <strong>Microsoft Visual Studio</strong>.
+2. Open the <strong>ATMSimulationProject.sln</strong> file.
+3. Build the project by pressing <strong>Ctrl+Shift+B</strong>.
+4. Run the project by pressing <strong>F5</strong>.
