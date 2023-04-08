@@ -16,6 +16,8 @@ To use this program, you need to have the following software installed on your m
 3. Build the project by pressing <strong>`Ctrl+Shift+B`</strong>.
 4. Run the project by pressing <strong>`F5`</strong>.
 
+<h2><strong>Usage</strong></h2>
+If the above steps were performed properly, the following user interface should be on your screen:
 ![image](https://user-images.githubusercontent.com/88695972/230731922-e5227209-80a2-4851-928e-fba988456763.png)
 
 
