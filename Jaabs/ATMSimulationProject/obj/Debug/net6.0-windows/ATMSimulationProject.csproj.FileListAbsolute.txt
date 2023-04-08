@@ -129,11 +129,8 @@ C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net6.0-wi
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net6.0-windows\ATMSimulationProject.dll
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net6.0-windows\ATMSimulationProject.pdb
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.csproj.AssemblyReference.cache
-C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.AccountForm.resources
-C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CreateAccountForm.resources
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.DepositForm.resources
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.EndScreen.resources
-C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.LoginForm.resources
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.LoginWithPINForm.resources
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.MainInterface.resources
 C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.Properties.Resources.resources
@@ -154,3 +151,4 @@ C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net
 C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CheckBalance.resources
 C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.EndScreen.resources
 C:\Users\ryana\OneDrive\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.WaitingScreen.resources
+C:\Users\lalal\source\repos\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CheckBalance.resources

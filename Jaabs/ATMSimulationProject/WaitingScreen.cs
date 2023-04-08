@@ -47,5 +47,6 @@ namespace ATMSimulationProject
                 Thread.Sleep(500);
             }
         }
+
     }
 }

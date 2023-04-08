@@ -20,12 +20,27 @@ namespace ATMSimulationProject
             this.ATM = ATM;
             //lblBalance.Text = Convert.ToString("");
         }
-
+        public void CreditCardMode()
+        {
+            cmbAccount.Hide();
+            label1.Hide();
+        }
+        public void DebitCardMode()
+        {
+            cmbAccount.Show();
+            label1.Show();
+        }
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             if (cmbAccount.Text.Equals("Chequing") || cmbAccount.Text.Equals("Savings"))
             {
                 ATM.Withdraw(Convert.ToInt32(txtBoxWithdraw.Text), cmbAccount.Text);
+                (new EndScreen()).Show();
+                this.Close();
+            }
+            else if (ATM.CardType == "Credit")
+            {
+                ATM.Withdraw(Convert.ToInt32(txtBoxWithdraw.Text), "");
                 (new EndScreen()).Show();
                 this.Close();
             }
@@ -46,6 +61,16 @@ namespace ATMSimulationProject
         {
             MainInterface.mainInterface.Show();
             this.Close();
+        }
+
+        private void WithdrawForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

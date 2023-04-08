@@ -30,5 +30,6 @@ namespace ATMSimulationProject
             WaitingScreen.waitingScreen.Show();
             WaitingScreen.waitingScreen.WaitingScreen_Shown(null, null);
         }
+
     }
 }

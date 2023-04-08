@@ -27,12 +27,39 @@ namespace ATMSimulationProject
             //lblBalance.Text = Convert.ToString("");
             mainInterface = this;
         }
+        public void ToggleSecondaryBankMode()
+        {
+            btnDeposit.Hide();
+            btnTransfer.Hide();
+        }
+        public void ToggleMainBank()
+        {
+            btnDeposit.Show();
+            btnTransfer.Show();
+            CheckBalance.Show();
+            btnWithdraw.Show();
+        }
 
+        public void ToggleCreditCardMode()
+        {
+            btnDeposit.Hide();
+            btnTransfer.Hide();
+            CheckBalance.Hide();
+        }
         //Withdraw button method
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             //Call the withdraw form
-            new WithdrawForm(ATM).Show();
+            WithdrawForm withdrawForm = new WithdrawForm(ATM);
+            if (ATM.CardType == "Credit")
+            {
+                withdrawForm.CreditCardMode();
+            }
+            else if (ATM.CardType == "Debit")
+            {
+                withdrawForm.DebitCardMode();
+            }
+            withdrawForm.Show();
             this.Hide();
         }
 

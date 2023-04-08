@@ -151,11 +151,11 @@
 
         #endregion
         private Label label1;
-        private Button btnWithdraw;
-        private Button btnDeposit;
-        private Button btnTransfer;
+        public Button btnWithdraw;
+        public Button btnDeposit;
+        public Button btnTransfer;
         private Button btnLogout;
         private Label label2;
-        private Button CheckBalance;
+        public Button CheckBalance;
     }
 }

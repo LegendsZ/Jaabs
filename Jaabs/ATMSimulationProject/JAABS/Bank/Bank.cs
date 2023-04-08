@@ -41,8 +41,11 @@ namespace JAABS.Bank
             if (temp.Blocked == 1)
             {
                 temp.Attempts = 0;
+                UpdateServer();
                 return 2;
             };
+            temp.Attempts = 0;
+            UpdateServer();
             return 0;
         }
         //Blocks account if deposit is more than 10k (Not legal)

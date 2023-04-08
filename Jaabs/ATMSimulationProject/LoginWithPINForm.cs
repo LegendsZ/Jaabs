@@ -42,6 +42,18 @@ namespace ATMSimulationProject
             {
                 MainInterface mainInterface = new MainInterface(ATM);
                 mainInterface.Show();
+                if (ATM.ActiveBank != ATM.Banks[0] && ATM.CardType == "Debit")
+                {
+                    mainInterface.ToggleSecondaryBankMode();
+                }
+                else if (ATM.CardType == "Credit")
+                {
+                    mainInterface.ToggleCreditCardMode();
+                }
+                else
+                {
+                    mainInterface.ToggleMainBank();
+                }
                 Hide();
             }
 

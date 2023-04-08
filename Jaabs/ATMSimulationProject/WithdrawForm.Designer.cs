@@ -94,6 +94,7 @@
             this.cmbAccount.Name = "cmbAccount";
             this.cmbAccount.Size = new System.Drawing.Size(121, 33);
             this.cmbAccount.TabIndex = 12;
+            this.cmbAccount.SelectedIndexChanged += new System.EventHandler(this.cmbAccount_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -124,6 +125,7 @@
             this.Name = "WithdrawForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WithdrawForm";
+            this.Load += new System.EventHandler(this.WithdrawForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,10 +3,10 @@
 MACHINE ID                   30321758753
 CARD NUMBER             ************3864
 
-REFERENCE ID                    10000000
+REFERENCE ID                    10000001
 DEBIT                            Savings
-WITHDRAW                            5.00
-BALANCE                        113382.00
+DEPOSIT                           100.00
+BALANCE                        113392.00
 
 
 	Thank you for banking with TMBANK	
