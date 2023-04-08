@@ -21,5 +21,9 @@ Once running, the following user interface should be on your screen:
 
 <img src="https://user-images.githubusercontent.com/88695972/230731922-e5227209-80a2-4851-928e-fba988456763.png" alt="image" style="width:500px;"/>
 
-
-
+In the CardReader.txt file, input the 16-digits of the customers Card Number in the file, <strong>`Ctrl+S`</strong> to save and then return to the user interface.
+Next the prompt for the users PIN should appear, enter the PIN <strong>`Ctrl+S`</strong> to save and then return to the user interface.
+```
+Ex. CardNumber: 1004864910513864
+Ex. PIN: 1234
+```
