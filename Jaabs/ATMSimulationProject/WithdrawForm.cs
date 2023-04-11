@@ -32,6 +32,16 @@ namespace ATMSimulationProject
         }
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(txtBoxWithdraw.Text) % 5 != 0)
+            {
+                MessageBox.Show(
+                    "Amount must be in multiples of 5",
+                    "INVALID AMMOUNT",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+                return;
+            }
             if (cmbAccount.Text.Equals("Chequing") || cmbAccount.Text.Equals("Savings"))
             {
                 ATM.Withdraw(Convert.ToInt32(txtBoxWithdraw.Text), cmbAccount.Text);

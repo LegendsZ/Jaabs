@@ -40,6 +40,7 @@ namespace ATMSimulationProject
             ATM.LogIn(txtboxPIN.Text);
             if (ATM.LoggedIn)
             {
+                count = 0;
                 MainInterface mainInterface = new MainInterface(ATM);
                 mainInterface.Show();
                 if (ATM.ActiveBank != ATM.Banks[0] && ATM.CardType == "Debit")
@@ -56,20 +57,19 @@ namespace ATMSimulationProject
                 }
                 Hide();
             }
-
-
-
-            /*string accountNumber = ""; //txtboxAccountNumber.Text;
-            string pin = txtboxPIN.Text;
-
-            Account account = new Account(
-                            Convert.ToInt32(accountNumber.Trim()),
-                            Convert.ToInt32(pin.Trim()),
-                            Convert.ToDecimal(2000),
-                            "User"
-                            );*/
-
-
+            else
+            {
+                if (count < 3)
+                {
+                    count++;
+                }
+                MessageBox.Show(
+                    "You have used " + (count) + "/3 tries!",
+                    "INVALID PIN",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            }
         }
 
         private void lblAccountNumber_Click(object sender, EventArgs e)

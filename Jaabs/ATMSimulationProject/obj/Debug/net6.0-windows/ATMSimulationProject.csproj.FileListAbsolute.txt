@@ -52,10 +52,7 @@ C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net6.0-windows\ATMSimulationProject.dll
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\bin\Debug\net6.0-windows\ATMSimulationProject.pdb
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.csproj.AssemblyReference.cache
-C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.AccountForm.resources
-C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.CreateAccountForm.resources
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.DepositForm.resources
-C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.LoginForm.resources
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.LoginWithPINForm.resources
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.MainInterface.resources
 C:\Users\WINDOWS\Documents\GitHub\Jaabs\Jaabs\ATMSimulationProject\obj\Debug\net6.0-windows\ATMSimulationProject.Properties.Resources.resources
