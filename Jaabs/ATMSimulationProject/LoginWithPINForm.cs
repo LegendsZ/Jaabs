@@ -17,7 +17,6 @@ namespace ATMSimulationProject
     public partial class LoginWithPINForm : Form
     {
         //ATM object
-        private int count = 0;
         JAABS.ATMMachine.ATMMachine ATM;
 
         //Intilaize component
@@ -40,7 +39,6 @@ namespace ATMSimulationProject
             ATM.LogIn(txtboxPIN.Text);
             if (ATM.LoggedIn)
             {
-                count = 0;
                 MainInterface mainInterface = new MainInterface(ATM);
                 mainInterface.Show();
                 if (ATM.ActiveBank != ATM.Banks[0] && ATM.CardType == "Debit")
@@ -59,13 +57,9 @@ namespace ATMSimulationProject
             }
             else
             {
-                if (count < 3)
-                {
-                    count++;
-                }
                 MessageBox.Show(
-                    "You have used " + (count) + "/3 tries!",
-                    "INVALID PIN",
+                    "Login Error. Invalid Pin or Account Blocked",
+                    "Login Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
